@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>RESERVING - {% block title %}{% endblock %}</title>
+
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('web_assets/css/main.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
+{% block body %}
+    {% include '@App/shared/web_header.html.twig' %}
+
+    {% block content %}{% endblock %}
+
+    {% include "@App/shared/web_footer.html.twig" %}
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

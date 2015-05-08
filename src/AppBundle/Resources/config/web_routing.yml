@@ -2,13 +2,9 @@ web_homepage:
     path:     /
     defaults: { _controller: AppBundle:Web:index }
 
-web_contacto:
-    path:     /contacto/
-    defaults: { _controller: AppBundle:Web:contacto }
-
-web_planes_precios:
-    path:     /planes-y-precios/
-    defaults: { _controller: AppBundle:Web:precios }
+web_servicios:
+    path:     /servicios/
+    defaults: { _controller: AppBundle:Web:servicios }
 
 web_preguntas_frecuentes:
     path:     /preguntas-frecuentes/

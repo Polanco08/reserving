@@ -11,15 +11,11 @@ class WebController extends Controller
         return $this->render('@App/web/index.html.twig');
     }
 
-	public  function contactoAction() {
-		return $this->render("AppBundle:web:contacto.html.twig");
-	}
-
-	public  function preciosAction() {
-		return $this->render("AppBundle:web:precios.html.twig");
+	public  function serviciosAction() {
+		return $this->render("AppBundle:web:servicios.html.twig");
 	}
 
 	public  function faqAction() {
-		return $this->render("AppBundle:web:faq.html.twig");
+		return $this->render("AppBundle:web:preguntasFrecuentes.html.twig");
 	}
 }
