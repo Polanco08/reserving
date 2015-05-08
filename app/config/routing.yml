@@ -1,0 +1,17 @@
+reserving_api_routing:
+    resource: "@AppBundle/Resources/config/api_routing.yml"
+    type: rest
+    prefix:   /api/
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc/
+
+reserving_admin_routing:
+    resource: "@AppBundle/Resources/config/admin_routing.yml"
+    prefix:   /admin/
+
+reserving_web_routing:
+    resource: "@AppBundle/Resources/config/web_routing.yml"
+    prefix:   /
+
