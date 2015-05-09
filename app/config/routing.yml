@@ -1,17 +1,21 @@
 reserving_api_routing:
     resource: "@AppBundle/Resources/config/api_routing.yml"
     type: rest
-    prefix:   /api/
+    prefix:   /
+    host: %api_domain%
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   /api/doc/
+    prefix:   /
+    host: %api_domain%
 
 reserving_admin_routing:
     resource: "@AppBundle/Resources/config/admin_routing.yml"
-    prefix:   /admin/
+    prefix:   /
+    host: %app_domain%
 
 reserving_web_routing:
     resource: "@AppBundle/Resources/config/web_routing.yml"
     prefix:   /
+    host: %domain%
 
