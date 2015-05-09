@@ -9,5 +9,7 @@
 /composer.phar
 /vendor/
 /web/bundles/
+/web/bower_components/
+/web/node_modules/
 .idea
 composer.lock
