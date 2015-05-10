@@ -3,13 +3,19 @@
 
     /**
      * ReservingApp Module
-     *
      * Módulo principal de la aplicación
      */
     var webApp = angular.module('reserving', [
         'ui.router',
         'ngResource'
     ]);
+
+    // Cambio del simbolo { por [ - evita conflictos con twig
+    webApp.config(['$interpolateProvider', function($interpolateProvider){
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    }]);
+
 
     webApp.config(
         ['$stateProvider','$urlRouterProvider',
