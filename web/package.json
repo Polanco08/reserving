@@ -1,0 +1,22 @@
+{
+  "name": "reserving",
+  "version": "1.0.0",
+  "description": "Package Manager for reserving App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Polanco08/reserving.git"
+  },
+  "author": "Geordano Polanco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Polanco08/reserving/issues"
+  },
+  "homepage": "https://github.com/Polanco08/reserving#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}

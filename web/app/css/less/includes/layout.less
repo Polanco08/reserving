@@ -1,0 +1,36 @@
+
+/** LAYOUT ESYLE
+----------------------------------------------------------*/
+#page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+//Bloques principales
+#page-wrapper{
+  padding: 0 15px;
+  min-height: 568px;
+  position: relative !important;
+  margin: 0 0 0 220px;
+}
+
+.wrapper-content{
+  padding: 20px 10px 40px;
+}
+
+//Footer Fixed
+.footer{
+  padding: @padding-base;
+  background-color: #fff;
+  border-top: solid 1px @gris-claro;
+
+  &.fixed{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  p{
+    margin-bottom: 0;
+  }
+}
