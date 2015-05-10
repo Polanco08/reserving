@@ -2,7 +2,7 @@
 <html ng-app="reserving">
 <head>
     <meta charset="utf-8">
-    <title>Reserving | Gestión de citas online</title>
+    <title>Reserving | {% block title %}{% endblock %}</title>
     <meta name="description" content="Reserving, el gestor de citas que te ayudará a organizar tu negocio.">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,13 +25,11 @@
 </head>
 
 <body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
-{% block body %}
-    {% include '@App/admin/shared/admin_header.html.twig' %}
-
-    {% block content %}{% endblock %}
-
-    {% include "@App/admin/shared/admin_footer.html.twig" %}
-{% endblock %}
+    <div id="page">
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+    </div>
 {% block javascripts %}
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -56,7 +54,6 @@
     <script src="{{ asset("app/scripts/directives.js") }}"></script>
     <script src="{{ asset("app/scripts/filters.js") }}"></script>
     <script src="{{ asset("app/scripts/services.js") }}"></script>
-    <script src="{{ asset("app/js/reserving.js") }}"></script>
     <!-- endbuild -->
 
 {% endblock %}

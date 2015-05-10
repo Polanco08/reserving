@@ -1,29 +1,40 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Reserving - WebApp</title>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script>
-    angular.module('app', [])
-            .config(function($interpolateProvider) {
-                $interpolateProvider.startSymbol('[[');
-                $interpolateProvider.endSymbol(']]');
-            })
+{% set currentpage = "appHome" %}
+{% extends "@App/admin/admin_layout.html.twig" %}
+{% block title %}Gestor de citas Online.{% endblock %}
 
-            .controller('appCtrl', ['$scope', function($scope){
-                $scope.empleados = [{name: "Geordano"},{name:"Beatriz"}];
-            }])
-</script>
-<body ng-app="app">
+{% block content %}
+    <nav class="sidebar navbar-dark" role="navegation">
+        <div class="slimScrollDiv">
+            <div class="sidebar--collapse">
+                <a ui-sref="reserving" class="sidebar--logo">
+                    <img src="{{ asset("app/images/logo.png") }}" alt="Reserving">
+                </a>
 
-<div class="" ng-controller="appCtrl">
-    <ul>
-        <input type="text" ng-model="texto"/> <strong>[[ texto ]]</strong>
-        <li ng-repeat="empleado in empleados">[[ empleado.name | filter:text]]</li>
-    </ul>
-</div>
-<!-- Scripts -->
-</body>
-</html>
+                <ul class="nav" id="side-menu">
+                    <li ui-sref-active="active"><a ui-sref="reseving">Calendario</a></li>
+                    <li ui-sref-active="active"><a ui-sref="empleados.list">Empleados</a></li>
+                    <li ui-sref-active="active"><a ui-sref="clientes.list">Clientes</a></li>
+                    <li ui-sref-active="active"><a ui-sref="servicios">Servicios</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="navbar-top row border-bottom">
+            <nav class="navbar-static-top">
+                nav top
+            </nav>
+        </div>
+
+        <div class="wrapper-content">
+            <div ui-view></div>
+        </div>
+
+        <div class="row">
+            <div class="footer fixed">
+                <p class="copy pull-left">Copyright <strong>RESERVING</strong> © 2015-2016</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
