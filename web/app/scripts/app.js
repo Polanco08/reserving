@@ -32,7 +32,7 @@
                     // Home State - Master template
                     .state('reseving', {
                         url: "/",
-                        templateUrl: "views/reserving/main.html"
+                        templateUrl: "/app/views/reserving/main.html"
                     })
 
 
@@ -41,20 +41,20 @@
                     .state('clientes', { // Estado base que contiene el ui-view para este módulo
                         abstract: true,
                         url: '/clientes',
-                        templateUrl: 'views/cliente/clientes.html',
+                        templateUrl: '/app/views/cliente/clientes.html',
                         //add resolve
                     })
                     .state('clientes.list', {
                         url: '',
-                        templateUrl: 'views/cliente/clientes_list.html'
+                        templateUrl: '/app/views/cliente/clientes_list.html'
                     })
                     .state('clientes.nuevo',{
                         url: '/nuevo',
-                        templateUrl: 'views/cliente/nuevo.html'
+                        templateUrl: '/app/views/cliente/nuevo.html'
                     })
                     .state('clientes.detalle', {
                         url: '/detalle',
-                        templateUrl: 'views/cliente/detalle.html'
+                        templateUrl: '/app/views/cliente/detalle.html'
                     })
 
 
@@ -64,18 +64,18 @@
                         abstract: true,
                         controller: 'EmpleadosController',
                         url: '/empleados',
-                        templateUrl: 'views/empleado/empleados.html'
+                        templateUrl: '/app/views/empleado/empleados.html'
                     })
                     .state('empleados.list', {
                         url: '',
-                        templateUrl: 'views/empleado/empleados_list.html'
+                        templateUrl: '/app/views/empleado/empleados_list.html'
                     })
 
 
                     // Servicios State
                     .state('servicios', {
                         url: '/servicios',
-                        templateUrl: 'views/servicio/servicios.html'
+                        templateUrl: '/app/views/servicio/servicios.html'
                     });
             }]);
 })();
