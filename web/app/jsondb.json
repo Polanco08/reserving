@@ -1,0 +1,20 @@
+{
+    "empleados": [
+        {"id": 1, "name": "Manuela", "lastName": "Camacho Martinez"},
+        {"id": 2, "name": "Carlos", "lastName": "Perez Lopez"},
+        {"id": 3, "name": "Roberto", "lastName": "Casillas"}
+    ],
+
+    "servicios" :[
+        {"id": 0, "name": "", "desc": "", "duration": 10, "price": 15},
+        {"id": 0, "name": "", "desc": "", "duration": 10, "price": 15},
+        {"id": 0, "name": "", "desc": "", "duration": 10, "price": 15},
+        {"id": 0, "name": "", "desc": "", "duration": 10, "price": 15}
+    ],
+
+    "clientes" : [
+        {"id": 1, "name": "Geordano", "lastName": "Polanco Rodríguez", "email": "jordano_p@hotmail.es", "tel": "123456789"},
+        {"id": 2, "name": "Beatriz", "lastName": "Tiedra peña", "email": "bea@gmail.com", "tel": "123456789"},
+        {"id": 3, "name": "Manolo", "lastName": "Perez Lora", "email": "manolo@gmail.com", "tel": "123456789"}
+    ]
+}

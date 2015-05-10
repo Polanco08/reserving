@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    var path = '../jsondb.json';
+    var path = '/app/jsondb.json';
 
     angular.module('reserving')
 

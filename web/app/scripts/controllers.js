@@ -19,6 +19,7 @@
 
             ClienteService.getAll(function (data) {
                 $scope.clientes = data.clientes;
+
             });
 
         }])
