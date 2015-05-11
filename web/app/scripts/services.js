@@ -1,9 +1,8 @@
 (function(){
     'use strict';
     var path = '/app/jsondb.json';
-
+    var _APIURL = 'http://api.reserving.local';
     angular.module('reserving')
-
 
         // Factory Empleados - Gestión de empleados
         //----------------------------------------------------------------------
@@ -39,7 +38,7 @@
         //----------------------------------------------------------------------
         .service('ClienteService', ['$http', 'tools', function($http, tools){
             this.getAll = function(success, failure) {
-                $http.get(path)
+                $http.get(_APIURL+'/clientes')
                     .success(success)
                     .error(failure);
             }

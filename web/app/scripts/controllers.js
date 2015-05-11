@@ -18,7 +18,8 @@
             $scope.clientes = [];
 
             ClienteService.getAll(function (data) {
-                $scope.clientes = data.clientes;
+                console.log(data);
+                $scope.clientes = data;
 
             });
 

@@ -16,7 +16,6 @@
         $interpolateProvider.endSymbol(']]');
     }]);
 
-
     webApp.config(
         ['$stateProvider','$urlRouterProvider',
             function ($stateProvider,$urlRouterProvider) {

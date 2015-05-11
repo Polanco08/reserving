@@ -1,0 +1,100 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+/**
+ * Cliente
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Cliente
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100)
+     * @NotBlank()
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellidos", type="string", length=100, nullable=true)
+     */
+    private $apellidos;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="edad", type="integer", nullable=true)
+     */
+    private $edad;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="genero", type="string", nullable=true)
+     */
+    private $genero;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="dni", type="string", length=10, nullable=true)
+     */
+    private $dni;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="fechaNacimiento", type="datetime", nullable=true)
+     */
+    private $fechaNacimiento;
+
+    /**
+     * @var
+     * @ORM\Column(name="email", type="string", length=50, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var
+     * @ORM\Column(name="tel", type="string", length=15, nullable=false)
+     */
+    private $tel;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="direccion", type="string", nullable=true)
+     */
+    private $direccion;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="cPostal", type="string", nullable=true)
+     */
+    private $cPostal;
+
+
+}

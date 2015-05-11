@@ -25,17 +25,77 @@ class Cliente
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=100)
+     * @ORM\Column(name="nombre", type="string", length=100)
      * @NotBlank()
      */
-    private $name;
+    private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastName", type="string", length=100, nullable=true)
+     * @ORM\Column(name="apellidos", type="string", length=100, nullable=true)
      */
-    private $lastName;
+    private $apellidos;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="edad", type="integer", nullable=true)
+     */
+    private $edad;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="genero", type="string", nullable=true)
+     */
+    private $genero;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="dni", type="string", length=10, nullable=true)
+     */
+    private $dni;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="fechaNacimiento", type="datetime", nullable=true)
+     */
+    private $fechaNacimiento;
+
+    /**
+     * @var
+     * @ORM\Column(name="email", type="string", length=50, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var
+     * @ORM\Column(name="tel", type="string", length=15, nullable=false)
+     */
+    private $tel;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="direccion", type="string", nullable=true)
+     */
+    private $direccion;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="cPostal", type="string", nullable=true)
+     */
+    private $cPostal;
+
 
 
     /**
@@ -49,48 +109,232 @@ class Cliente
     }
 
     /**
-     * Set name
+     * Set nombre
      *
-     * @param string $name
+     * @param string $nombre
      * @return Cliente
      */
-    public function setName($name)
+    public function setNombre($nombre)
     {
-        $this->name = $name;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get nombre
      *
      * @return string 
      */
-    public function getName()
+    public function getNombre()
     {
-        return $this->name;
+        return $this->nombre;
     }
 
     /**
-     * Set lastName
+     * Set apellidos
      *
-     * @param string $lastName
+     * @param string $apellidos
      * @return Cliente
      */
-    public function setLastName($lastName)
+    public function setApellidos($apellidos)
     {
-        $this->lastName = $lastName;
+        $this->apellidos = $apellidos;
 
         return $this;
     }
 
     /**
-     * Get lastName
+     * Get apellidos
      *
      * @return string 
      */
-    public function getLastName()
+    public function getApellidos()
     {
-        return $this->lastName;
+        return $this->apellidos;
+    }
+
+    /**
+     * Set edad
+     *
+     * @param integer $edad
+     * @return Cliente
+     */
+    public function setEdad($edad)
+    {
+        $this->edad = $edad;
+
+        return $this;
+    }
+
+    /**
+     * Get edad
+     *
+     * @return integer 
+     */
+    public function getEdad()
+    {
+        return $this->edad;
+    }
+
+    /**
+     * Set genero
+     *
+     * @param string $genero
+     * @return Cliente
+     */
+    public function setGenero($genero)
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+
+    /**
+     * Get genero
+     *
+     * @return string 
+     */
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /**
+     * Set dni
+     *
+     * @param string $dni
+     * @return Cliente
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
+    /**
+     * Get dni
+     *
+     * @return string 
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+
+    /**
+     * Set fechaNacimiento
+     *
+     * @param \DateTime $fechaNacimiento
+     * @return Cliente
+     */
+    public function setFechaNacimiento($fechaNacimiento)
+    {
+        $this->fechaNacimiento = $fechaNacimiento;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaNacimiento
+     *
+     * @return \DateTime 
+     */
+    public function getFechaNacimiento()
+    {
+        return $this->fechaNacimiento;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Cliente
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set tel
+     *
+     * @param string $tel
+     * @return Cliente
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    /**
+     * Get tel
+     *
+     * @return string 
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Set direccion
+     *
+     * @param string $direccion
+     * @return Cliente
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+
+        return $this;
+    }
+
+    /**
+     * Get direccion
+     *
+     * @return string 
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
+    /**
+     * Set cPostal
+     *
+     * @param string $cPostal
+     * @return Cliente
+     */
+    public function setCPostal($cPostal)
+    {
+        $this->cPostal = $cPostal;
+
+        return $this;
+    }
+
+    /**
+     * Get cPostal
+     *
+     * @return string 
+     */
+    public function getCPostal()
+    {
+        return $this->cPostal;
     }
 }

@@ -27,8 +27,8 @@
 								</thead>
 								<tbody>
 									<tr ng-repeat="cliente in clientes | orderBy: orderList.type | filter:search">
-										<td>[[cliente.name]]</td>
-										<td>[[cliente.lastName]]</td>
+										<td>[[cliente.nombre]]</td>
+										<td>[[cliente.apellidos]]</td>
 										<td>[[cliente.email]]</td>
 										<td>
 											<a ui-sref="clientes.detalle">Detalles</a>

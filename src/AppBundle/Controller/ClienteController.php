@@ -9,53 +9,90 @@ use AppBundle\Entity\Cliente;
 
 /**
  * @RouteResource("Cliente")
+ *
  */
+
 class ClienteController extends ApiRestController
 {
-	/**
-	 * @ApiDoc(
-	 *     statusCodes={
-	 *         200="Returned when successful",
-	 *         403="Returned when the user is not authorized to say hello",
-	 *         404={
-	 *           "Returned when the user is not found",
-	 *           "Returned when something else is not found"
-	 *         }
-	 *     }
-	 * )
-	 */
+    /**
+     * @ApiDoc(
+     * description="Retorna una listado de clientes",
+     * resource=true,
+     * statusCodes={
+     *         200="La petición ha sido exitosa",
+     *         403="Usuario no autenticado para este recurso",
+     *         404={
+     *           "No Found / Recurso no existe",
+     *           "No Found / Servicio no encontrado"
+     *         }
+     *     }
+     * )
+     */
 	public function cgetAction()
 	{
 		return $this->cget("Cliente");
 	}//"get_users"     [GET] /clientes
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getAction(Cliente $cliente)
+    public function getAction(Cliente $id)
 	{
-		return $cliente;
+		return $id;
 	}//"get_user"      [GET] /clientes/{id}
 
 
+    /**
+     * @ApiDoc(
+     * description="Agrega un nuevo cliente",
+     * requirements={
+     *      {"name"="nombre","dataType"="string","requirement"="","description"="Nombre del cliente, obligatorio"},
+     *      {"name"="apellidos","dataType"="string","requirement"="","description"="Apellidos del cliente, opcional"},
+     *      {"name"="edad","dataType"="string","requirement"="","description"="Edad del cliente, opcional"},
+     *      {"name"="genero","dataType"="string","requirement"="","description"="Genero del cliente, opcional"},
+     *      {"name"="dni","dataType"="string","requirement"="","description"="DNI del cliente"},
+     *      {"name"="fechaNacimiento","dataType"="datetime","requirement"="","description"="Fecha de nacimiento del cliente"},
+     *      {"name"="email","dataType"="string","requirement"="","description"="Teléfono del cliente."},
+     *      {"name"="tel","dataType"="string","requirement"="","description"="Teléfono del cliente"},
+     *      {"name"="direccion","dataType"="string","requirement"="","description"="Dirección del cliente."},
+     *      {"name"="cPostal","dataType"="string","requirement"="","description"="Código Postal del cliente."}
+     * }
+     * )
+     */
 	public function postAction()
 	{
 		return $this->post("Cliente");
 	}//"new_users"     [POST] /clientes
 
 
-	public  function putAction(Cliente $cliente)
+    /**
+     * @param Cliente $id
+     * @return mixed
+     *
+     * @ApiDoc(
+     * description="Actualiza un cliente por su ID",
+     * parameters={
+     *      {"name"="id", "dataType"="integer", "required"=true, "description"="Cliente ID"}
+     * }
+     * )
+     */
+    public  function putAction(Cliente $id)
 	{
+        $cliente = $id;
 		$ClienteEditado = $this->deserializa('Cliente');
 
-		$cliente->setName($ClienteEditado->getName());
-		$cliente->setLastName($ClienteEditado->getLastName());
+		$cliente->setNombre($ClienteEditado->getNombre());
+		$cliente->setApellidos($ClienteEditado->getApellidos());
+        $cliente->setEmail($ClienteEditado->getEmail());
 
 		return $this->guarda($cliente);
 	}
 
-	public function deleteAction(Cliente $cliente)
+    /**
+     * @ApiDoc(
+     * description="Agrega un nuevo cliente",
+     * parameters={{"name"="id", "dataType"="integer", "required"=true, "description"="Cliente ID"}}
+     * )
+     */
+	public function deleteAction(Cliente $id)
 	{
-		return $this->borra($cliente);
+		return $this->borra($id);
 	}
 }
