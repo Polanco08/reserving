@@ -14,7 +14,8 @@ class EmpleadoController extends ApiRestController
 {
 	/**
 	 * @ApiDoc(
-	 *
+	 *  description="Listado de empleado",
+     * resource=true
 	 * )
 	 * @return array
 	 */

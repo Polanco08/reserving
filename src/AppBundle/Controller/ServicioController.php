@@ -13,7 +13,8 @@ class ServicioController extends ApiRestController
 {
 	/**
 	 * @ApiDoc(
-	 *
+	 *  description="Listado de servicios",
+     * resource=true
 	 * )
 	 * @return array
 	 */

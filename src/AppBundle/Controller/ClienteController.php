@@ -87,7 +87,7 @@ class ClienteController extends ApiRestController
 
     /**
      * @ApiDoc(
-     * description="Agrega un nuevo cliente",
+     * description="Elimina un cliente",
      * parameters={{"name"="id", "dataType"="integer", "required"=true, "description"="Cliente ID"}}
      * )
      */
