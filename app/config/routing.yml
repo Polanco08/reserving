@@ -19,3 +19,6 @@ reserving_web_routing:
     prefix:   /
     host: %domain%
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
