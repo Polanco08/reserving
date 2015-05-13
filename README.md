@@ -7,6 +7,7 @@ API REST de RESERVING
 La API esta desarrollada utilizando **Symfony version 2.3** con ayuda del Bundle de terceros:
 
  1. [FOS Rest Bundle] (http://symfony.com/doc/master/bundles/FOSRestBundle/index.html): Nos proporciona un conjunto de herramientas que nos ayudará con la creación de nuestra **API REST** con **Symfony 2**.
+ 2. [DOS User Bundle] ():
  2. [Nelmio Api Doc Bundle] (https://github.com/nelmio/NelmioApiDocBundle/blob/master/Resources/doc/index.md): Nos ayuda a la generación de una **documentación par ala API**.
  3. [JMS Serializer Bundle](http://jmsyst.com/bundles/JMSSerializerBundle): Permite serializar los datos para entregarlos en formatos como: **XML**, **JSON** o **YML**.
  4. [Doctrine](http://www.doctrine-project.org/): Es el ORM que utilizaremos para la relación y mapeo de objetos.
@@ -57,6 +58,18 @@ Las rutas de la api estrán a partir de **api.reserving.me**, esta será la ruta
 
  **CLIENTES**
 
+input{
+    "nombre": "",
+    "apellidos": "",
+    "telefono": "",
+    "email": "",
+    "direccion": "",
+    "codPostal": "",
+    "dni": "",
+    "fechaNacimiento": "",
+    "sexo": "",
+    "edad": ""
+}
 
  **AGENDAS**
 
