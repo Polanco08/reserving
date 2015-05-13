@@ -86,7 +86,7 @@ swiftmailer:
     spool:     { type: memory }
 
 # ------------------------------------------------- #
-# ----------- DOCUMENTACIÓN API REST -------------- #
+# --------------- FOS User Manager ---------------- #
 # ------------------------------------------------- #
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
