@@ -1,3 +1,7 @@
+api_empleado:
+    type: rest
+    resource: AppBundle\Controller\UsuarioController
+
 api_cliente:
     type: rest
     resource: AppBundle\Controller\ClienteController
