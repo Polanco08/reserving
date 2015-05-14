@@ -5,16 +5,28 @@
     <title>RESERVING - {% block title %}{% endblock %}</title>
 
     {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset("bower_components/bootstrap/dist/css/bootstrap.min.css") }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('web_assets/css/main.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
 {% block body %}
-    {% include '@App/web/shared/web_header.html.twig' %}
+<div class="page">
+    <!-- .page-header-->
+    <header class="page-header">
+        {% include '@App/web/shared/web_header.html.twig' %}
+    </header>
 
-    {% block content %}{% endblock %}
+    <!-- .page-content -->
+    <div class="page-content">
+        {% block content %}{% endblock %}
+    </div>
 
-    {% include "@App/web/shared/web_footer.html.twig" %}
+    <!-- .page-footer -->
+    <footer class="page-footer">
+        {% include "@App/web/shared/web_footer.html.twig" %}
+    </footer>
+</div>
 {% endblock %}
 {% block javascripts %}{% endblock %}
 </body>

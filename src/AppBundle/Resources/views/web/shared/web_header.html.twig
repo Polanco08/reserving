@@ -1,46 +1,18 @@
-<header class="page-geader row">
-
-    <div class="fluid-container">
-
-        <!-- Logo web -->
-        <div class="col-md-4">
-            <a href="{{ path("web_homepage") }}">
-                <img src="" alt="Reserving - Gestor de citas online"/>
-            </a>
-        </div>
+<div class="container">
+    <div class="row">
+        <a class="col-xs-12 col-md-3 logo text-center" title="Reserving.me" href="/">
+            <img src="{{ asset("app/images/logo.png") }}" class="img-responsive center-block" alt="Reserving"/>
+        </a>
 
         <!-- Menú principal -->
-        <nav class="col-md-8" role="navegation">
-            <ul class="menu-principal">
-                <li class="item"><a href="{{ path("web_homepage") }}">Inicio</a></li>
-                <li class="item"><a href="{{ path("web_servicios") }}">Servicios</a></li>
-                <li class="item"><a href="#planesPrecios">Planes y precios</a></li>
-                <li class="item"><a href="{{ path("web_preguntas_frecuentes") }}">faq's</a></li>
-                <li class="item"><a href="#contacto">Contacto</a></li>
-            </ul>
-            
-            <ul>
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li>
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{{ path('fos_user_security_login') }}">
-                            {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ path("fos_user_registration_register") }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
-                    </li>
-                {% endif %}
+        <nav class="menu col-xs-12 col-md-8 pull-right" role="navegation">
+            <ul class="main-menu">
+                <li class="main-menu__item--current"><a href="{{ path("web_homepage") }}">Inicio</a></li>
+                <li class="main-menu__item"><a href="{{ path("web_servicios") }}">Servicios</a></li>
+                <li class="main-menu__item"><a href="#planesPrecios">Planes y precios</a></li>
+                <li class="main-menu__item"><a href="{{ path("web_preguntas_frecuentes") }}">faq's</a></li>
+                <li class="main-menu__item"><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-
     </div>
-
-</header>
+</div>
