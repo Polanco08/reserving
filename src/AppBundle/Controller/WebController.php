@@ -18,4 +18,5 @@ class WebController extends Controller
 	public  function faqAction() {
 		return $this->render("AppBundle:web:preguntasFrecuentes.html.twig");
 	}
+
 }
