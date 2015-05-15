@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>RESERVING - {% block title %}{% endblock %}</title>
+
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset("bower_components/bootstrap/dist/css/bootstrap.min.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('web_assets/css/main.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body ng-app="loginApp" id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
+{% block body %}
+    <div class="page">
+        <!-- .page-content -->
+        <div class="page-content" >
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

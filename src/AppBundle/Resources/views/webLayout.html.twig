@@ -12,22 +12,29 @@
 <body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
 {% block body %}
 <div class="page">
-    <!-- .page-header-->
-    <header class="page-header">
-        {% include '@App/web/shared/web_header.html.twig' %}
-    </header>
+    {% block header%}
+        <!-- .page-header-->
+        <header class="page-header">
+            {% include '@App/web/shared/web_header.html.twig' %}
+        </header>
+    {% endblock%}
 
     <!-- .page-content -->
     <div class="page-content">
         {% block content %}{% endblock %}
     </div>
 
-    <!-- .page-footer -->
-    <footer class="page-footer">
-        {% include "@App/web/shared/web_footer.html.twig" %}
-    </footer>
+    {% block footer%}
+        <!-- .page-footer -->
+        <footer class="page-footer">
+            {% include "@App/web/shared/web_footer.html.twig" %}
+        </footer>
+    {% endblock %}
 </div>
 {% endblock %}
+    <script src="{{ asset('bower_components/angular/angular.js') }}"></script>
+    <script src="{{ asset('bower_components/angular-ui-router/release/angular-ui-router.js') }}"></script>
+    <script src="{{ asset('web_assets/js/main.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>
