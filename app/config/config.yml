@@ -96,7 +96,7 @@ fos_user:
     user_class: AppBundle\Entity\Usuario
 
     registration:
-        form:
+        form: #para sobre escribir el Form Type por defecto
             type: app_user_registration
 
 
