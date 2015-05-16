@@ -1,12 +1,3 @@
-// BOOTSTRAP ELEMENT
-//---------------------------------------------------------------
-@import "../../bower_components/bootstrap/less/variables";
-
-
-// OVERRIDE BOOTSTRAP STYLES
-//----------------------------------------------------------------
-
-
 	@import "less/variables";
 	@import "less/mixins";
 	@import "less/layout";
@@ -37,9 +28,24 @@
 \*------------------------------------*/
 #pagelogin{
   margin-top:60px;
-  background: @brand-primary;
-
-  label{color: #fff;}
-  .logo{padding-bottom: 50px;}
+	background: @brand-primary;
 }
 
+.login-wraper{
+	footer{padding: 15px 0;}
+	.checkbox{padding: 0;margin:0;}
+	.form-control:focus{border-color:@turquoise;}
+  	.checkbox label{padding-left: 25px;color: @turquoise;}
+}
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+	BOOTSTRAP OVERRIDE
+\*------------------------------------*/
+@import "less/bootstrap_override";
