@@ -10,13 +10,17 @@
 {% block content %}
 <div class="form-user login-wraper col-xs-12 col-sm-4 col-sm-offset-4 clearfix">
     {% block fos_user_content %}
-        {% if error %}
-            <div xmlns="http://www.w3.org/1999/html">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
 
         <img src="{{ asset("app/images/logo.png") }}" alt="Reserving.me" class="logo img-responsive center-block"/>
 
         <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+            {% if error %}
+                <div class="alert alert-danger" xmlns="http://www.w3.org/1999/html">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+
+
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
             <div class="form-group">
                 <input class="form-control input-lg"

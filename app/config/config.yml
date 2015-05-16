@@ -160,7 +160,7 @@ fos_rest:
         rules:
             - { path: '/', host: '%api_domain%', priorities: ['json'], fallback_format: json, prefer_extension: false }
             - { path: ^/, host: '%domain%', priorities: ['html', '*/*'], fallback_format: html, prefer_extension: false }
-            - { path: ^/, host: '%app_domain%', priorities: ['html', '*/*'], fallback_format: html, prefer_extension: false }
+            #- { path: ^/, host: '%app_domain%', priorities: ['html', '*/*'], fallback_format: html, prefer_extension: false }
 
     routing_loader:
         default_format: json

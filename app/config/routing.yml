@@ -4,21 +4,21 @@ reserving_api_routing:
     prefix:   /
     host: %api_domain%
 
-NelmioApiDocBundle:
-    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   /
-    host: %api_domain%
 
 reserving_admin_routing:
     resource: "@AppBundle/Resources/config/admin_routing.yml"
-    prefix:   /
-    host: %app_domain%
+    prefix:   /app
+    host: %domain%
 
 reserving_web_routing:
     resource: "@AppBundle/Resources/config/web_routing.yml"
     prefix:   /
     host: %domain%
 
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /
+    host: %api_domain%
 
 # ------------------------------------------------- #
 # ----------- RUTAS DE FOSUserBundle -------------- #
@@ -46,4 +46,4 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
-    host: %domain%
+
