@@ -36,7 +36,32 @@ body {
     $HEADER STYLE
 \*------------------------------------*/
 .logo {
-  padding: 20px 0;
+  padding: 8px;
+  max-width: 230px;
+  display: block;
+}
+.navbar-default {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.navbar-transparent {
+  background: transparent;
+}
+.navbar-transparent .login-menu {
+  background: transparent;
+}
+.navbar-transparent .login-menu a:hover {
+  color: #18bc9c !important;
+  background: transparent !important;
+}
+.login-menu {
+  margin-left: 30px;
+  background: #c64d2d;
+}
+.login-menu a:hover {
+  color: #FFFFFF !important;
+  background: #ba482a !important;
 }
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE

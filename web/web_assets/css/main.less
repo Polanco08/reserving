@@ -1,6 +1,6 @@
-	@import "less/variables";
-	@import "less/mixins";
-	@import "less/layout";
+  @import "less/variables";
+  @import "less/mixins";
+  @import "less/layout";
 
 
 /*------------------------------------*\
@@ -9,19 +9,53 @@
 
   // Logo Block
   .logo{
-	padding: 20px 0;
+	padding: 8px;
+	max-width: 230px;
+	display: block;
   }
 
-  // Login-Menu Block
+  // NAVBAR BLOCK
+  .navbar{
+
+	&-default{
+		.rounded(0px);
+
+	  .nav{
+		&bar-nav{
+		  &__item{}
+		  &__item--current{}
+		  &__item--login{}
+		  &__item--register{}
+		}
+	  }
+	}
+
+	&-transparent{
+	  background:transparent;
+
+	  .login-menu{
+		background: transparent;
+
+		a:hover{
+		  color:@turquoise !important;
+		  background: transparent !important;
+		}
+	  }
+	}
+  }
+
+  // LOGIN-MENU BLOCK
   .login-menu{
+	margin-left: 30px;
+	background: @brand-naranja;
 
+	a:hover{
+	  color: #FFFFFF !important;
+	  background: darken(@brand-naranja, 3%) !important;
+	}
   }
 
 
-  // Menú Block
-  .menu{
-
-  }
 
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE
