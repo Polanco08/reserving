@@ -46,6 +46,8 @@ security:
             form_login:
                 provider: fos_userbundle
                 login_path: /login
+                always_use_default_target_path: false
+                default_target_path: /app
                 csrf_provider: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
             logout:
                 path:   /logout

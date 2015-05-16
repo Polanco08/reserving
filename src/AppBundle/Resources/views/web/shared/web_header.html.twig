@@ -13,6 +13,27 @@
                 <li class="main-menu__item"><a href="{{ path("web_preguntas_frecuentes") }}">faq's</a></li>
                 <li class="main-menu__item"><a href="#contacto">Contacto</a></li>
             </ul>
+
+            <ul class="login-menu">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li class="login-menu__item login-menu__item--logout">
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="login-menu__item login-menu__item--login">
+                        <a href="{{ path('fos_user_security_login') }}">
+                            {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+
+                    <li class="login-menu__item login-menu__item--register">
+                        <a href="{{ path("fos_user_registration_register") }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+                    </li>
+                {% endif %}
+            </ul>
         </nav>
     </div>
 </div>
