@@ -39,11 +39,11 @@ body {
   padding: 20px 0;
 }
 /*------------------------------------*\
-	PAGE LOGIN STYLE
+	PAGE LOGIN/REGISTER STYLE
 \*------------------------------------*/
-#pagelogin {
-  margin-top: 60px;
+#useraccess {
   background: #2c3e50;
+  margin-top: 60px;
 }
 .login-wraper footer {
   padding: 15px 0;

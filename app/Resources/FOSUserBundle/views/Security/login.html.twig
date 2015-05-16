@@ -1,4 +1,4 @@
-{% set currentpage = 'pagelogin'%}
+{% set currentpage = 'useraccess'%}
 {% extends "@App/webLayout.html.twig" %}
 
 {% block title %} Entrar{% endblock %}
@@ -8,7 +8,7 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="login-wraper col-xs-12 col-sm-4 col-sm-offset-4 clearfix">
+<div class="form-user login-wraper col-xs-12 col-sm-4 col-sm-offset-4 clearfix">
     {% block fos_user_content %}
         {% if error %}
             <div xmlns="http://www.w3.org/1999/html">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -45,9 +45,18 @@
                 </div>
             </div>
 
-            <button class="btn btn-success btn-block bnt-lg" type="submit" id="_submit">
-                <i class="glyphicon glyphicon-log-in"></i> {{ 'security.login.submit'|trans }}
-            </button>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button class="btn btn-success btn-block bnt-lg" type="submit" id="_submit">
+                        <i class="glyphicon glyphicon-log-in"></i> {{ 'security.login.submit'|trans }}
+                    </button>
+                </div>
+                <div class="col-xs-6">
+                    <a class="btn btn-default btn-block bnt-lg" href="{{ path('fos_user_registration_register') }}">
+                        <i class="glyphicon glyphicon-user"></i> ¿Quieres registrarte?
+                    </a>
+                </div>
+            </div>
         </form>
     {% endblock fos_user_content %}
     <footer class="text-center">

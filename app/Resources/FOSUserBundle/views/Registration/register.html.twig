@@ -1,17 +1,43 @@
+{% set currentpage = 'useraccess'%}
 {% extends "@App/webLayout.html.twig" %}
 
-{% block title %} Entrar{% endblock %}
+{% block title %} Registrarse{% endblock %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block header %}
-    <img src="{{ asset("app/images/logo.png") }}" alt="Reserving.me" class=" img-responsive center-block"/>
+    <img src="{{ asset("app/images/logo.png") }}" alt="Reserving.me" class="logo img-responsive center-block"/>
 {% endblock %}
 
 {% block content %}
 
     {% block fos_user_content %}
-    {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+
+        <div class="form-user login-wraper col-xs-12 col-sm-4 col-sm-offset-4 clearfix">
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }}
+                  method="POST" class="fos_user_registration_register">
+
+                {{ form_widget(form) }}
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button class="btn btn-success btn-block bnt-lg" type="submit" id="_submit">
+                            <i class="glyphicon glyphicon-user"></i> Registrarme
+                        </button>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="btn btn-default btn-block bnt-lg" href="{{ path('fos_user_security_login') }}">
+                            <i class="glyphicon glyphicon-log-in"></i> Entrar, Ya tengo cuenta
+                        </a>
+                    </div>
+                </div>
+            </form>
+
+            <footer class="text-center">
+                <small>Copyright 2014 - 2015 <strong>Reserving</strong>. Todos los derechos reservados.</small>
+            </footer>
+        </div>
+
     {% endblock fos_user_content %}
 
 {% endblock %}
