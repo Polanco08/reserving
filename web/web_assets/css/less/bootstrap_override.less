@@ -1,0 +1,33 @@
+.form-control:focus{}
+.checkbox{
+  .control-label{
+	position: relative;
+	margin-left: 0;
+	padding-left: 25px;
+
+	&:before{
+	  content: "";
+	  position: absolute;
+	  width: 20px;
+	  height:20px;
+	  .rounded(3px);
+	  background: @gray-lighter;
+	  left: 0;
+	  border:solid 1px transparent;
+	}
+
+	&:hover{
+	  &:before{border-color: @turquoise;}
+	}
+  }
+
+  input[type="checkbox"]{
+	display: none;
+  }
+
+  input[type=checkbox]:checked + label:before{
+	border-width: 4px;
+	border-color: @gray-lighter;
+	background: @turquoise;
+  }
+}
