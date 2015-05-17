@@ -45,7 +45,7 @@ h1 {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 .content-box {
-  padding: 54px 0;
+  padding: 60px 0;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -120,7 +120,7 @@ h1 {
   z-index: 9999;
 }
 .navbar-scroller {
-  background: #2c3e50;
+  background: rgba(44, 62, 80, 0.8);
   padding-bottom: 0;
   padding-top: 0;
 }
@@ -185,6 +185,7 @@ h1 {
 }
 #landing-header .mas-info {
   cursor: pointer;
+  text-decoration: none;
   -webkit-animation: fleacha 3s 4s infinite ease-in-out;
   -moz-animation: fleacha 3s 4s infinite ease-in-out;
   animation: fleacha 3s 4s infinite ease-in-out;
@@ -194,6 +195,9 @@ h1 {
   text-align: center;
   left: 50%;
   margin-left: -70px;
+}
+#landing-header .mas-info:hover {
+  text-decoration: none;
 }
 #landing-header .mas-info span {
   color: #fff;

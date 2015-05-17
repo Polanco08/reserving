@@ -57,27 +57,49 @@ function jsInit() {
         jQuery(document).on("ready", landingInit);
     })();
 
-    //WINDOW SCROLL FUNCTIONS
+    //FUNCIONES QUE SE EJECUTAN AL HACER SCROLL
     jQuery(window).scroll(function () {
         navScroll();
-        //heroAnim();
+        landingAnim();
     });
 
-
-    //ADD CLASS TO NAVBAR ON SCROLL
+    //AGREGAR CLASE .SCROLLER AL MENU
     function navScroll() {
+        var wh = jQuery(window).height() - 100;
 
         var scrolledTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (scrolledTop >= 120) {
+        if (scrolledTop >= wh) {
             jQuery(".navbar.navbar-default").removeClass('navbar-transparent').addClass('nav-scroll');
             jQuery(".logo").removeClass('logo').addClass('logo-scroller');
             jQuery(".login-menu").addClass('login-menu-scroller');
-        } else if (scrolledTop < 120) {
+        } else if (scrolledTop < wh) {
             jQuery(".navbar.navbar-default").removeClass('nav-scroll').addClass('navbar-transparent');
             jQuery(".logo-scroller").removeClass('logo-scroller').addClass('logo');
             jQuery(".login-menu").removeClass('login-menu-scroller');
         }
     }
+
+    //SCROLL PARA ENLACES ANCLA
+    jQuery('a.anchor').click(function () {
+        jQuery('html, body').animate({
+            scrollTop: jQuery(jQuery(this).attr('href')).offset().top
+        }, 1000);
+        return false;
+    });
+
+    //ANIMATE HERO CONTENT ON SCROLL
+    function landingAnim() {
+
+        var scrolledTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        if (scrolledTop >= 100) {
+            jQuery(".animated").stop().animate({"top": "-70px","opacity": "0"}, 400);
+        } else if(scrolledTop < 150){
+            jQuery(".animated").stop().animate({"top": "0px", "opacity": "1"}, 400);
+        }
+
+    }
+
+    landingAnim();
 }
 
 

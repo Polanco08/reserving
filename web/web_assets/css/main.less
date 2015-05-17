@@ -43,7 +43,7 @@
 	}
 
 	&-scroller{
-		background: @brand-primary;
+		background: fade(@brand-primary,80%);
 	  	padding-bottom: 0;
 	  	padding-top: 0;
 	}
@@ -108,6 +108,7 @@
   .mas-info{
 	@width: 140;
 	cursor: pointer;
+	text-decoration: none;
 
 	-webkit-animation: fleacha 3s 4s infinite ease-in-out;
 	-moz-animation: fleacha 3s 4s infinite ease-in-out;
@@ -119,6 +120,8 @@
 	text-align: center;
 	left: 50%;
 	margin-left: (@width/2)*-1px;
+
+	&:hover{text-decoration: none;}
 
 	span{
 	  color:#fff;
