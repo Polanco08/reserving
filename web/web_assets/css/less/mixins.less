@@ -6,6 +6,32 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.overlay(@color: @brand-primary){
+  background: fade(@color, 85%);
+  padding: 65px 0;
+  height: 100%;
+}
+.parallax(@img: ""){
+  position: relative;
+
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: 			cover;
+  -webkit-background-size: 	cover;
+  -moz-background-size: 	cover;
+
+  background-image: url(@img);
+
+  /*& when (@overlay = true) {
+	&:before{
+	  content: "";
+	  position: absolute;
+	  left: 0;right: 0;bottom: 0;top: 0;
+	  background: fade(@color,90%);
+	}
+  }*/
+}
+
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
   background: -webkit-gradient(linear,

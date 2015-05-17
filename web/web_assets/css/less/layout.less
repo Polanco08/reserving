@@ -3,11 +3,23 @@ body{
   font-family: @font-family-sans-serif;
   color:@gray-dark;
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family: @font-family-sans-serif;
+  font-weight: 300;
+  strong{font-weight: 900;}
+}
+h1{
+  font-size: @font-size-h1;
+}
 // PAGE-HEADER BLOCK
 .page-header{
-  margin-top: 0;
-  border: none;
+  margin: 0;
+  background: @brand-primary;
+  padding: 0;
+  position: relative;
+}
+.scroller .page-header{
+  .box-shadow(0 5px 5px rgba(0,0,0,.2));
 }
 
 
@@ -17,11 +29,11 @@ body{
 
 // BLOCK CONTENT-BLOX
 .content-box{
-  padding: @padding-large-vertical @padding-large-horizontal;
-  background: #fff;
+  padding: (@padding-large-horizontal*2) 0;
+  .box-sizing(border-box);
 
   &__title{
-	color: @brand-danger;
+	color: #ffffff;
 	margin-top: 0;
 	text-align: center;
 
@@ -29,11 +41,21 @@ body{
   }
   &__content{}
 
-  // Block Modificadores
-  &--landing{
-	background: transparent;
-	padding: 100px;
+  // BLOCK MODIFICADORES
+  &.content-box--landing{
+	height: 100vh;
+	margin-top:-65px; // para que abarque el alto completo de la pantalla
+	padding-top: 120px;
+	&__title{
+	  color: @brand-naranja;
+	}
   }
+}
+
+
+
+.parallax{
+  .parallax("../img/langing_home_bg.jpg");
 }
 
 //PAGE-FOOTER BLOCK

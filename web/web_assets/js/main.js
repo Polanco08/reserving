@@ -1,5 +1,75 @@
+/*----------------------------
+ WINDOW LOAD FUNCTION
+ -----------------------------*/
+jQuery(window).load(function () {
+    "use strict";
+
+    jQuery(window).trigger("hashchange");
+    jQuery(window).trigger("resize");
+
+    //FADE OUT PRELOADER AFTER PAGE LOADING
+    jQuery("#loader-overlay").delay(300).fadeOut("slow");
+});
+
+
+/*----------------------------
+ DOC READY FUNCTION
+ -----------------------------*/
+jQuery(document).ready(function () {
+    "use strict";
+
+    jsInit();
+});
+// end document ready
+
+
+/*----------------------------
+ MAIN JS INIT FUNCTION
+ -----------------------------*/
+function jsInit() {
+    "use strict";
+
+
+    //LANDING PAGE CONTENT POSITION
+    (function () {
+        function landingInit() {
+
+            var wh = jQuery(window).height(),
+                landing = jQuery('#landing-header'),
+                landingContent = jQuery('#landing-header .landing-header-content');
+
+            if (matchMedia('(min-width: 480px)').matches) {
+
+                landing.css({height: wh + "px"});
+
+                var contentHeight = landingContent.height(),
+                    landingHeight = landing.height(),
+                    topMargin = (landingHeight - contentHeight) / 3;
+
+                landingContent.css({"margin-top": topMargin + "px"});
+
+            } else {
+                landing.css({height: "auto"});
+                landingContent.css({"margin-top": "0px"});
+            }
+        }
+        jQuery(window).on("resize", landingInit);
+        jQuery(document).on("ready", landingInit);
+    })();
+}
+
+
+
+
 (function(){
     'use strict';
+
+    //Home Page
+    var landing = $('#landing-header');
+
+    console.log(landing);
+
+
 
     // LOGIN ANGULAR MODULE
     //-------------------------------------

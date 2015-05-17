@@ -6,7 +6,6 @@
 /*------------------------------------*\
     $HEADER STYLE
 \*------------------------------------*/
-
   // Logo Block
   .logo{
 	padding: 8px;
@@ -19,6 +18,9 @@
 
 	&-default{
 		.rounded(0px);
+		margin-bottom: 0;
+		border-top: solid 3px @brand-naranja;
+	  z-index: 9999;
 
 	  .nav{
 		&bar-nav{
@@ -32,15 +34,6 @@
 
 	&-transparent{
 	  background:transparent;
-
-	  .login-menu{
-		background: transparent;
-
-		a:hover{
-		  color:@turquoise !important;
-		  background: transparent !important;
-		}
-	  }
 	}
   }
 
@@ -48,6 +41,11 @@
   .login-menu{
 	margin-left: 30px;
 	background: @brand-naranja;
+	position: relative;
+
+	.border-radius(0,10px,10px,0);
+	.box-shadow(0 3px 5px fade(darken(@brand-primary, 7%),50%));
+	overflow: hidden;
 
 	a:hover{
 	  color: #FFFFFF !important;
@@ -56,13 +54,47 @@
   }
 
 
+/*------------------------------------*\
+	PAGE HOME STYLE
+\*------------------------------------*/
+#home{
+  .page-header{background: transparent;}
+  .page{
+
+  }
+}
+
+#landing-header{
+  text-align: center;
+  background: url("../img/landing-home-bg-1.jpg") fixed center center;
+  background-size: cover;
+
+  height: 100%;
+
+  .overlay{
+	.overlay()
+  }
+
+  .landing-header-content{
+
+	h1{margin-bottom: 20px;}
+
+	.mas-info{
+		position: absolute;
+	 	bottom: 0;
+
+	  i{display: block;}
+	}
+  }
+}
+
 
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE
 \*------------------------------------*/
 #useraccess{
 	background: @brand-primary;
-  margin-top: 60px;
+	margin-top: 60px;
 }
 
 .login-wraper{
