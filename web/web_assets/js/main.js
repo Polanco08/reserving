@@ -56,6 +56,28 @@ function jsInit() {
         jQuery(window).on("resize", landingInit);
         jQuery(document).on("ready", landingInit);
     })();
+
+    //WINDOW SCROLL FUNCTIONS
+    jQuery(window).scroll(function () {
+        navScroll();
+        //heroAnim();
+    });
+
+
+    //ADD CLASS TO NAVBAR ON SCROLL
+    function navScroll() {
+
+        var scrolledTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        if (scrolledTop >= 120) {
+            jQuery(".navbar.navbar-default").removeClass('navbar-transparent').addClass('nav-scroll');
+            jQuery(".logo").removeClass('logo').addClass('logo-scroller');
+            jQuery(".login-menu").addClass('login-menu-scroller');
+        } else if (scrolledTop < 120) {
+            jQuery(".navbar.navbar-default").removeClass('nav-scroll').addClass('navbar-transparent');
+            jQuery(".logo-scroller").removeClass('logo-scroller').addClass('logo');
+            jQuery(".login-menu").removeClass('login-menu-scroller');
+        }
+    }
 }
 
 
