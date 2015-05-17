@@ -80,10 +80,10 @@ function jsInit() {
     }
 
     //SCROLL PARA ENLACES ANCLA
-    jQuery('a.anchor').click(function () {
+    jQuery('.anchor').click(function () {
         jQuery('html, body').animate({
             scrollTop: jQuery(jQuery(this).attr('href')).offset().top
-        }, 1000);
+        }, 2000);
         return false;
     });
 

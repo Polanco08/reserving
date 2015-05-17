@@ -18,19 +18,19 @@
                     <a href="{{ path("web_homepage") }}">Inicio</a>
                 </li>
                 <li class="main-menu__item {% if currentpage == 'servicios' %}active{% endif %}">
-                    <a href="{{ path("web_servicios") }}">Servicios</a>
+                    <a class="anchor" href="#servicios">Servicios</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#planesPrecios">Planes y precios</a>
+                    <a class="anchor" href="#planesPrecios">Planes y precios</a>
                 </li>
                 <li class="main-menu__item {% if currentpage == 'faq' %}active{% endif %}">
-                    <a href="{{ path("web_preguntas_frecuentes") }}">faq's</a>
+                    <a href="#faq">faq's</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#contacto">Contacto</a>
+                    <a class="anchor" href="#contacto">Contacto</a>
                 </li>
             </ul>
-            <ul class="login-menu nav navbar-nav">
+            <ul class="login-menu nav navbar-nav {%if currentpage != 'home'%}login-menu-scroller{%endif%}">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="login-menu__item login-menu__item--logout">
                         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -57,6 +57,7 @@
 </nav>
 
 
+{% if currentpage == 'home'%}
 <!-- home landing -->
 <div id="landing-header">
     <div class="overlay">
@@ -77,4 +78,5 @@
         </a>
     </div>
 </div>
+{%endif%}
 

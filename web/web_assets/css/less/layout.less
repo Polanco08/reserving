@@ -8,6 +8,7 @@ h1,h2,h3,h4,h5,h6{
   font-weight: 300;
   strong{font-weight: 900;}
 }
+hr.spacing-vertical{padding: 20px 0;border:none;}
 h1{
   font-size: @font-size-h1;
 }
@@ -42,6 +43,13 @@ h1{
   &__content{}
 
   // BLOCK MODIFICADORES
+  &.gray{
+	background: @section-gray;
+	border-top:solid 1px darken(@section-gray,5%);
+	border-bottom:solid 1px darken(@section-gray,5%);;
+  }
+
+
   &.content-box--landing{
 	height: 100vh;
 	margin-top:-65px; // para que abarque el alto completo de la pantalla
@@ -60,7 +68,26 @@ h1{
 
 //PAGE-FOOTER BLOCK
 .page-footer{
+	padding: @padding-base-vertical*2;
+	text-align:center;
+  	background: @brand-primary;
+  	color: @default-color;
+  p{margin:0;}
 
+  .footer-menu{
+	margin: 0;
+	padding: 0;
+	.item{
+	  display: inline-block;
+	  padding: 0 10px;
+	  a{color: @default-color;}
+	}
+  }
+
+  hr{
+	width: 100%;
+	border-color: @default-color;
+  }
 }
 
 
