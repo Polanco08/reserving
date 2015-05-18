@@ -61,6 +61,13 @@ class Empleado
      */
     private $alertaCitas;
 
+    /**
+     * @var
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     */
+    private $usuario;
+
+
 
     /**
      * Get id

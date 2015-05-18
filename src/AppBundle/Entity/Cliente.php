@@ -97,6 +97,13 @@ class Cliente
     private $cPostal;
 
 
+    /**
+     * @var
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     */
+    private $usuario;
+
+
 
     /**
      * Get id

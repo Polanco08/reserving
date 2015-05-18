@@ -33,6 +33,32 @@ class Usuario extends BaseUser
 
 
     /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Cliente", mappedBy="usuario")
+     *
+     */
+    private $clientes;
+
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Empleado", mappedBy="usuario")
+     *
+     */
+    private $empleados;
+
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\UserGroup")
+     * @ORM\JoinTable(name="usuario_grupo",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
+     * )
+     */
+    protected $groups;
+
+
+    /**
      * Get id
      *
      * @return integer 
