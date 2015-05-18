@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use AppBundle\Entity;
 
 /**
  * Servicio
@@ -190,28 +189,5 @@ class Servicio
     public function getHabilitadoParaReserva()
     {
         return $this->habilitadoParaReserva;
-    }
-
-    /**
-     * Set usuario
-     *
-     * @param \AppBundle\Entity\Usuario $usuario
-     * @return Servicio
-     */
-    public function setUsuario(Usuario $usuario = null)
-    {
-        $this->usuario = $usuario;
-
-        return $this;
-    }
-
-    /**
-     * Get usuario
-     *
-     * @return \AppBundle\Entity\Usuario 
-     */
-    public function getUsuario()
-    {
-        return $this->usuario;
     }
 }
