@@ -62,7 +62,7 @@ class Servicio
 
     /**
      * @var
-     * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="Servicios")
+     * @ORM\ManyToOne(targetEntity="Usuario")
      */
     private $usuario;
 

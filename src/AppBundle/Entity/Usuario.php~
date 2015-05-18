@@ -27,7 +27,7 @@ class Usuario extends BaseUser
     /**
      * @var
      * @ORM\OneToMany(targetEntity="Servicio", mappedBy="usuario")
-     * 
+     *
      */
     private $servicios;
 
