@@ -1,4 +1,4 @@
-api_empleado:
+api_usuario:
     type: rest
     resource: AppBundle\Controller\UsuarioController
 

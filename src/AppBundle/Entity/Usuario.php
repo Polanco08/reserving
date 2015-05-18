@@ -72,6 +72,7 @@ class Usuario extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->servicios = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
