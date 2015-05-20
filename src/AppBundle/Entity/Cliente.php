@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Cliente
@@ -100,6 +101,7 @@ class Cliente
     /**
      * @var
      * @ORM\ManyToOne(targetEntity="Usuario")
+     * @Exclude()
      */
     private $usuario;
 
