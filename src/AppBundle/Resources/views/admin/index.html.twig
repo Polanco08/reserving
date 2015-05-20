@@ -7,14 +7,14 @@
         <div class="slimScrollDiv">
             <div class="sidebar--collapse">
                 <a ui-sref="reserving" class="sidebar--logo">
-                    <img src="{{ asset("app/images/logo.png") }}" alt="Reserving">
+                    <img src="{{ asset("assets/app/images/logo.png") }}" alt="Reserving">
                 </a>
 
                 <ul class="nav" id="side-menu">
-                    <li ui-sref-active="active"><a ui-sref="reseving">Calendario</a></li>
-                    <li ui-sref-active="active"><a ui-sref="empleados.list">Empleados</a></li>
-                    <li ui-sref-active="active"><a ui-sref="clientes.list">Clientes</a></li>
-                    <li ui-sref-active="active"><a ui-sref="servicios">Servicios</a></li>
+                    <li ui-sref-active="active" ui-nested><a ui-sref="reseving">Calendario</a></li>
+                    <li ui-sref-active="active" ui-nested><a ui-sref="empleados.list">Empleados</a></li>
+                    <li ui-sref-active="active" ui-nested><a ui-sref="clientes.list">Clientes</a></li>
+                    <li ui-sref-active="active" ui-nested><a ui-sref="servicios.list">Servicios</a></li>
                 </ul>
             </div>
         </div>

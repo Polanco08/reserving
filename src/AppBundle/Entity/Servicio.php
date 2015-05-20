@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use AppBundle\Entity;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * Servicio
@@ -63,6 +64,7 @@ class Servicio
     /**
      * @var
      * @ORM\ManyToOne(targetEntity="Usuario")
+     * @Exclude
      */
     private $usuario;
 

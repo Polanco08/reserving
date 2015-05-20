@@ -5,15 +5,12 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block header %}
-    <img src="{{ asset("app/images/logo.png") }}" alt="Reserving.me" class="logo img-responsive center-block"/>
-{% endblock %}
-
 {% block content %}
 
     {% block fos_user_content %}
 
         <div class="form-user login-wraper col-xs-12 col-sm-4 col-sm-offset-4 clearfix">
+            <img src="{{ asset("assets/app/images/logo.png") }}" alt="Reserving.me" class="logo img-responsive center-block"/>
             <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }}
                   method="POST" class="fos_user_registration_register">
 
