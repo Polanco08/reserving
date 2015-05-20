@@ -48,17 +48,6 @@ class Usuario extends BaseUser
     private $empleados;
 
 
-
-    /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\UserGroup")
-     * @ORM\JoinTable(name="usuario_grupo",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
-
-
     /**
      * Get id
      *
@@ -108,5 +97,71 @@ class Usuario extends BaseUser
     public function getServicios()
     {
         return $this->servicios;
+    }
+
+    /**
+     * Add clientes
+     *
+     * @param \AppBundle\Entity\Cliente $clientes
+     * @return Usuario
+     */
+    public function addCliente(\AppBundle\Entity\Cliente $clientes)
+    {
+        $this->clientes[] = $clientes;
+
+        return $this;
+    }
+
+    /**
+     * Remove clientes
+     *
+     * @param \AppBundle\Entity\Cliente $clientes
+     */
+    public function removeCliente(\AppBundle\Entity\Cliente $clientes)
+    {
+        $this->clientes->removeElement($clientes);
+    }
+
+    /**
+     * Get clientes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getClientes()
+    {
+        return $this->clientes;
+    }
+
+    /**
+     * Add empleados
+     *
+     * @param \AppBundle\Entity\Empleado $empleados
+     * @return Usuario
+     */
+    public function addEmpleado(\AppBundle\Entity\Empleado $empleados)
+    {
+        $this->empleados[] = $empleados;
+
+        return $this;
+    }
+
+    /**
+     * Remove empleados
+     *
+     * @param \AppBundle\Entity\Empleado $empleados
+     */
+    public function removeEmpleado(\AppBundle\Entity\Empleado $empleados)
+    {
+        $this->empleados->removeElement($empleados);
+    }
+
+    /**
+     * Get empleados
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEmpleados()
+    {
+        return $this->empleados;
     }
 }

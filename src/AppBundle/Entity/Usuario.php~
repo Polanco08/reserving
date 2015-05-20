@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use JMS\Serializer\Annotation\Exclude;
 use AppBundle\Entity;
 
 /**
@@ -33,6 +34,21 @@ class Usuario extends BaseUser
 
 
     /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Cliente", mappedBy="usuario")
+     *
+     */
+    private $clientes;
+
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Empleado", mappedBy="usuario")
+     *
+     */
+    private $empleados;
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -46,6 +62,7 @@ class Usuario extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->servicios = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
