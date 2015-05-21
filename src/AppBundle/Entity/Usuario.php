@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use AppBundle\Entity;
@@ -67,7 +68,8 @@ class Usuario extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        $this->servicios = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->roles = array('ROLE_USER');
+        $this->servicios = new ArrayCollection();
     }
 
     /**

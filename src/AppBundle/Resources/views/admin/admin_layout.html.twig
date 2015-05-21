@@ -24,11 +24,11 @@
 </head>
 
 <body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
-    <div id="page">
+    <section id="page" class="main-page">
         {% block body %}
             {% block content %}{% endblock %}
         {% endblock %}
-    </div>
+    </section>
 {% block javascripts %}
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

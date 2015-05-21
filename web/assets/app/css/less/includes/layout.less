@@ -1,24 +1,100 @@
 
 /** LAYOUT ESYLE
 ----------------------------------------------------------*/
-#page {
-  width: 100%;
+
+// BLOQUE GENERAL - ENGLOBA TODO EL CONTENIDO DE LA WEB
+//----------------------------------------------------------
+.main-page {
+  min-height: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 //Bloques principales
+//-----------------------------------------------
 #page-wrapper{
   padding: 0 15px;
   min-height: 568px;
   position: relative !important;
-  margin: 0 0 0 220px;
+  margin: 0 0 0 240px;
 }
 
 .wrapper-content{
   padding: 20px 10px 40px;
 }
 
+
+// Sidebar
+//-----------------------------------------------
+.sidebar{
+  position: fixed;
+  width: 240px;
+  z-index: 2001;
+  height: 100%;
+
+
+  // Logo
+  &--logo{
+	background-color: darken(@brand-primary, 10%) !important;
+	border-bottom: solid 3px @brand-secundary;
+	cursor: pointer;
+	display: block;
+	padding: 40px 30px;
+	position: relative;
+	margin-bottom: 30px;
+
+	&:before{
+	  content: "";
+	  display: block;
+	  position: absolute;
+	  border-width: 20px;
+	  border-color: transparent;
+	  border-top-color: @brand-secundary;
+	  border-style: solid;
+	  left: 50%;
+	  margin-left: -10px;
+	  bottom: -40px;
+	}
+
+	img{
+	  width: 100%;
+	  height: auto;
+	}
+  }
+
+  // Menú Lateral Izquierdo
+  &.navbar-dark{
+	background: @brand-primary;
+
+	a{
+	  color:@link-background-dark;
+	  font-weight: 600;
+
+	  &:hover{
+		color:#ffffff;
+		background-color: darken(@brand-primary, 10%);
+	  }
+	}
+
+	li.active a{
+	  color:#ffffff;
+	  background-color: darken(@brand-primary, 10%);
+	}
+  }
+}
+
+
+// navbar-top
+//-----------------------------------------------
+.navbar-top {
+  background: #fff;
+  padding: 20px;
+  border-bottom: solid 1px @gris-claro;
+}
+
+
 //Footer Fixed
+//-------------------------------------------------
 .footer{
   padding: @padding-base;
   background-color: #fff;
