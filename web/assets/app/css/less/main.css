@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,800,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
 * {
   -webkit-box-sizing: border-box;
@@ -62,11 +64,26 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+.headerbar__menu .dropdown-toggle:hover,
+.headerbar__menu .dropdown-toggle:focus,
+.headerbar__menu .dropdown-toggle:active,
+.headerbar__menu .dropdown-toggle.active,
+.headerbar__menu .open .dropdown-toggle.dropdown-toggle {
+  background: #f9f9f9;
+  color: #333;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
 /** ESTILOS GLOBALES
 ----------------------------------------------------------*/
 body {
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #f3f3f4;
+  background-color: #e4e7ea;
   font-size: 14px;
   color: #676a6c;
   overflow-x: hidden;
@@ -110,68 +127,172 @@ h5 {
   height: 100%;
   overflow-x: hidden;
 }
-#page-wrapper {
-  padding: 0 15px;
-  min-height: 568px;
-  position: relative !important;
-  margin: 0 0 0 240px;
-}
-.wrapper-content {
-  padding: 20px 10px 40px;
-}
-.sidebar {
-  position: fixed;
-  width: 240px;
-  z-index: 2001;
+.main-page .mainpanel {
+  min-height: 100%;
   height: 100%;
 }
-.sidebar--logo {
-  background-color: #1c2630 !important;
-  border-bottom: solid 3px #c64d2d;
+.mainpanel {
+  margin-left: 240px;
+  padding-top: 50px;
+}
+.headerbar {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.05);
+  border-left: 1px solid #ecf0f1;
+  background: #fff;
+}
+.headerbar .menutoggle {
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
   cursor: pointer;
-  display: block;
-  padding: 40px 30px;
+  float: left;
+  color: #1d2939;
+  border-right: 1px solid #ecf0f1;
+  -moz-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.headerbar .menutoggle:hover {
+  background-color: #f7f7f7;
+}
+.headerbar .menutoggle .fa,
+.headerbar .menutoggle .glyphicon {
+  margin: 14px 0 0 15px;
+}
+.headerbar__right {
+  margin-right: 240px;
+}
+.headerbar__menu {
+  display: inline-block;
+  float: left;
+  border-left: 1px solid ;
   position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.headerbar__menu .tp-icon {
+  padding: 12px 15px;
+  height: 50px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  border-color: #fff;
+  -moz-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.headerbar__menu > li {
+  display: inline-block;
+  float: left;
+  border-left: 1px solid #ecf0f1;
+  position: relative;
+}
+.headerbar__menu .dropdown-toggle {
+  padding: 12px 10px;
+  border-color: #fff;
+  background: #fff;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+}
+.pageheader {
+  padding: 15px;
+  border-bottom: 1px solid #d3d7db;
+  border-top: 1px solid #ecf0f1;
+  background: #f7f7f7;
+  position: relative;
+}
+.pageheader h2 {
+  font-size: 28px;
+  color: #1d2939;
+  letter-spacing: -0.5px;
+  margin: 0;
+  font-weight: normal;
+}
+.pageheader h2 span {
+  font-size: 13px;
+  text-transform: none;
+  color: #95a5a6;
+  font-style: italic;
+  vertical-align: middle;
+  letter-spacing: 0;
+}
+.pageheader h2 span::before {
+  content: '/';
+  margin: 0 10px 0 5px;
+  color: #95a5a6;
+}
+.leftpanel {
+  width: 240px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #1d2939;
+}
+.leftpanel__logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 50px;
+  z-index: 100;
+  padding: 10px;
+  background: #fff;
+}
+.leftpanel__logo img {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+.leftpanel__title {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #95a5a6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.leftpanel__inner {
+  margin-top: 65px;
+  padding: 5px 15px;
+}
+.nav-bracket {
   margin-bottom: 30px;
 }
-.sidebar--logo:before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-width: 20px;
-  border-color: transparent;
-  border-top-color: #c64d2d;
-  border-style: solid;
-  left: 50%;
-  margin-left: -10px;
-  bottom: -40px;
+.nav-bracket > li + li {
+  margin-top: 5px;
+  margin-left: 0;
 }
-.sidebar--logo img {
-  width: 100%;
-  height: auto;
+.nav-bracket > li > a {
+  color: #95a5a6;
 }
-.sidebar.navbar-dark {
-  background: #2f4050;
+.nav-bracket > li > a:hover {
+  background-color: #fff;
+  color: #1d2939;
 }
-.sidebar.navbar-dark a {
-  color: #a7b1c2;
-  font-weight: 600;
+.nav-bracket > li.active a,
+.nav-bracket > li.active a:hover,
+.nav-bracket > li.active a:focus {
+  background-color: #c64d2d;
 }
-.sidebar.navbar-dark a:hover {
-  color: #ffffff;
-  background-color: #1c2630;
-}
-.sidebar.navbar-dark li.active a {
-  color: #ffffff;
-  background-color: #1c2630;
-}
-.navbar-top {
-  background: #fff;
-  padding: 20px;
-  border-bottom: solid 1px #f3f3f4;
+.nav-bracket > li .fa,
+.nav-bracket > li .glyphicon {
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 16px;
+  text-align: center;
 }
 .footer {
-  padding: 15px;
+  padding: 10px;
   background-color: #fff;
   border-top: solid 1px #f3f3f4;
 }

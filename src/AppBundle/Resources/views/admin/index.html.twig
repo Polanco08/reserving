@@ -3,48 +3,117 @@
 {% block title %}Gestor de citas Online.{% endblock %}
 
 {% block content %}
-    <nav class="sidebar navbar-dark" role="navegation">
-        <div class="slimScrollDiv">
-            <div class="sidebar--collapse">
-                <a ui-sref="reserving" class="sidebar--logo">
-                    <img src="{{ asset("assets/app/images/logo.png") }}" alt="Reserving">
-                </a>
+    <!-- Inicio .leftpanel -->
+    <div class="leftpanel">
 
-                <ul class="nav" id="side-menu">
-                    <li ui-sref-active="active" ui-nested><a ui-sref="reseving">Calendario</a></li>
-                    <li ui-sref-active="active" ui-nested><a ui-sref="empleados.list">Empleados</a></li>
-                    <li ui-sref-active="active" ui-nested><a ui-sref="clientes.list">Clientes</a></li>
-                    <li ui-sref-active="active" ui-nested><a ui-sref="servicios.list">Servicios</a></li>
-                </ul>
-            </div>
+        <!-- Inicio .logopanel -->
+        <div class="leftpanel__logo">
+            <img alt="Reserving " src="{{asset("assets/app/images/logo.png")}}" class="img-responsive">
         </div>
-    </nav>
+        <!-- Inicio .logopanel -->
 
-    <div id="page-wrapper">
-        <div class="navbar-top row border-bottom">
-            <nav class="navbar-static-top">
-                nav top
-            </nav>
-            <ul class="login-menu">
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li class="login-menu__item login-menu__item--logout">
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <!-- Inicio .leftpane__linner -->
+        <div class="leftpanel__inner">
+            <h5 class="leftpanel__title">Navegación</h5>
+
+            <ul class="nav nav-pills nav-stacked nav-bracket">
+                <li ui-sref-active="active" ui-nested>
+                    <a ui-sref="reseving">
+                        <i class="glyphicon glyphicon-calendar"></i>Calendario
+                    </a>
+                </li>
+                <li ui-sref-active="active" ui-nested>
+                    <a ui-sref="empleados.list">
+                        <i class="glyphicon glyphicon-briefcase"></i>Empleados
+                    </a>
+                </li>
+                <li ui-sref-active="active" ui-nested>
+                    <a ui-sref="clientes.list">
+                        <i class="glyphicon glyphicon-adjust"></i>Clientes
+                    </a>
+                </li>
+                <li ui-sref-active="active" ui-nested>
+                    <a ui-sref="servicios.list">
+                        <i class="glyphicon glyphicon-star-empty"></i>Servicios
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- Final .leftpane__linner -->
+
+    </div>
+    <!-- Final .leftpanel -->
+
+
+    <div class="mainpanel">
+
+        <!-- Inicio .headerbar -->
+        <div class="headerbar">
+            <a class="menutoggle menu-collapsed"><i class="fa fa-bars"></i></a>
+            <div class="headerbar__right pull-right">
+                <ul class="headerbar__menu">
+                    <li>
                         <a href="{{ path('fos_user_security_logout') }}">
                             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                         </a>
                     </li>
-                {% endif %}
-            </ul>
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                <li><a href=""><i class="glyphicon glyphicon-user"></i> Mi perfil</a></li>
+                                <li><a href=""><i class="glyphicon glyphicon-cog"></i> Configuraciones</a></li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        <i class="glyphicon glyphicon-log-out"></i> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-default tp-icon chat-icon">
+                            <i class="glyphicon glyphicon-fire"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <!-- Final .headerbar -->
+
+        <ul class="hidden login-menu">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li class="login-menu__item login-menu__item--logout">
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+
+        <!-- Inicio .pageheader -->
+        <div class="pageheader">
+            <h2>
+                <i class="fa fa-users[[Page.icon()]]"></i>
+                [[Page.title()]]Página
+                <span>[[Page.description()]] Descripción de la página</span>
+            </h2>
+        </div>
+        <!-- Final .pageheader -->
+
 
         <div class="wrapper-content">
             <div ui-view></div>
         </div>
 
-        <div class="row">
-            <div class="footer fixed">
-                <p class="copy pull-left">Copyright <strong>RESERVING</strong> © 2015-2016</p>
-            </div>
+        <div class="footer fixed">
+            <p class="copy pull-left">Copyright <strong>RESERVING</strong> © 2015-2016</p>
         </div>
     </div>
 {% endblock %}
