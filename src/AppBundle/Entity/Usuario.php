@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
-use JMS\Serializer\Annotation\Exclude;
 use AppBundle\Entity;
 
 /**
@@ -28,7 +27,6 @@ class Usuario extends BaseUser
     /**
      * @var
      * @ORM\OneToMany(targetEntity="Servicio", mappedBy="usuario")
-     *
      */
     private $servicios;
 
@@ -36,16 +34,22 @@ class Usuario extends BaseUser
     /**
      * @var
      * @ORM\OneToMany(targetEntity="Cliente", mappedBy="usuario")
-     *
      */
     private $clientes;
+
 
     /**
      * @var
      * @ORM\OneToMany(targetEntity="Empleado", mappedBy="usuario")
-     *
      */
     private $empleados;
+
+
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Cita", mappedBy="usuario")
+     */
+    private $citas;
 
 
     /**
@@ -163,5 +167,38 @@ class Usuario extends BaseUser
     public function getEmpleados()
     {
         return $this->empleados;
+    }
+
+    /**
+     * Add citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     * @return Usuario
+     */
+    public function addCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas[] = $citas;
+
+        return $this;
+    }
+
+    /**
+     * Remove citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     */
+    public function removeCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas->removeElement($citas);
+    }
+
+    /**
+     * Get citas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCitas()
+    {
+        return $this->citas;
     }
 }

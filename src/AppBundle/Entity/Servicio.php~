@@ -68,6 +68,13 @@ class Servicio
      */
     private $usuario;
 
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="Cita", mappedBy="servicio")
+     * @Exclude
+     */
+    private $citas;
+
 
     /**
      * Get id
@@ -215,5 +222,45 @@ class Servicio
     public function getUsuario()
     {
         return $this->usuario;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->citas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     * @return Servicio
+     */
+    public function addCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas[] = $citas;
+
+        return $this;
+    }
+
+    /**
+     * Remove citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     */
+    public function removeCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas->removeElement($citas);
+    }
+
+    /**
+     * Get citas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCitas()
+    {
+        return $this->citas;
     }
 }

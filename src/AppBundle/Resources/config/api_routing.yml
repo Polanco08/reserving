@@ -14,3 +14,7 @@ api_servicio:
 api_empleado:
     type: rest
     resource: AppBundle\Controller\EmpleadoController
+
+api_cita:
+    type: rest
+    resource: AppBundle\Controller\CitaController
