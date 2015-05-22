@@ -153,10 +153,6 @@ h5 {
 .mainpanel {
   margin-left: 240px;
   padding-top: 50px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .headerbar {
   position: fixed;
@@ -169,16 +165,17 @@ h5 {
   background: #fff;
 }
 .headerbar .menutoggle {
+  float: left;
   width: 50px;
   height: 50px;
   font-size: 22px;
   cursor: pointer;
-  float: left;
   color: #1d2939;
   border-right: 1px solid #ecf0f1;
-  -moz-transition: all 0.2s ease-out 0s;
-  -webkit-transition: all 0.2s ease-out 0s;
-  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .headerbar .menutoggle:hover {
   background-color: #f7f7f7;
@@ -205,9 +202,10 @@ h5 {
   background: #fff;
   color: #1d2939;
   border-color: #fff;
-  -moz-transition: all 0.2s ease-out 0s;
-  -webkit-transition: all 0.2s ease-out 0s;
-  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .headerbar__menu > li {
   display: inline-block;
@@ -320,7 +318,6 @@ h5 {
   color: #95a5a6;
   text-transform: uppercase;
   font-size: 11px;
-  font-weight: normal;
   display: inline-block;
   font-weight: bold;
 }
@@ -343,10 +340,6 @@ h5 {
   left: 0;
   z-index: 100;
   background: #1d2939;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .leftpanel__logo {
   position: fixed;
@@ -358,18 +351,10 @@ h5 {
   padding: 1px 10px;
   background: #fff;
   text-align: center;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .leftpanel__logo img {
   width: 45px;
   display: inline-block;
-  -webkit-transition: all 0s ease;
-  -moz-transition: all 0s ease;
-  -o-transition: all 0s ease;
-  transition: all 0s ease;
 }
 .leftpanel__logo h1 {
   display: inline-block;

@@ -23,7 +23,6 @@
 .mainpanel{
   margin-left: 240px;
   padding-top: 50px;
-  .transition(0.3s,ease);
 }
 
 
@@ -44,12 +43,9 @@
 	height: 50px;
 	font-size: 22px;
 	cursor: pointer;
-	float: left;
 	color: @brand-primary;
 	border-right: 1px solid @gray-lighter;
-	-moz-transition: all 0.2s ease-out 0s;
-	-webkit-transition: all 0.2s ease-out 0s;
-	transition: all 0.2s ease-out 0s;
+	.transition(0.2s, ease);
 
 	&:hover{
 	  background-color: @section-gray;
@@ -78,9 +74,7 @@
 	  background: #fff;
 	  color: @brand-primary;
 	  border-color: #fff;
-	  -moz-transition: all 0.2s ease-out 0s;
-	  -webkit-transition: all 0.2s ease-out 0s;
-	  transition: all 0.2s ease-out 0s;
+	  .transition(0.2s, ease);
 	}
 
 	&>li{
@@ -184,7 +178,6 @@
 	  color:@gray;
 	  text-transform: uppercase;
 	  font-size: 11px;
-	  font-weight: normal;
 	  display: inline-block;
 	  font-weight: bold;
 	}
@@ -215,8 +208,6 @@
   z-index: 100;
   background: @brand-primary;
 
-  .transition(0.3s,ease);
-
   &__logo{
 	position: fixed;
 	top: 0;
@@ -227,12 +218,10 @@
 	padding: 1px 10px;
 	background: #fff;
 	text-align: center;
-	.transition(0.3s,ease);
 
 	img{
 	  width: 45px;
 	  display: inline-block;
-	  .transition(0s,ease);
 	}
 	h1{
 	  display: inline-block;
@@ -242,6 +231,7 @@
 	  margin: 0;
 	  color: @brand-primary;
 	  font-weight: bold;
+
 
 	  span{
 		display: block;
@@ -287,6 +277,7 @@
 		&.active a, &.active a:hover, &.active a:focus{
 		  background-color: @brand-secundary;
 		}
+
 		.fa, .glyphicon{
 		  font-size: 16px;
 		  vertical-align: middle;
