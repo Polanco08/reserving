@@ -1,7 +1,7 @@
 reserving Web APP
 ===========================
 
-### 1.API REST FUll RESERVING
+### .API REST FUll RESERVING
 
 La API esta desarrollada utilizando **Symfony version 2.3**:
 
@@ -20,6 +20,9 @@ Esta API es [RESFULL](http://en.wikipedia.org/wiki/Overview_of_RESTful_API_Descr
 
 ## Tabla de contenido
 1. [Métodos HTTP permitidos](#métodos-http-permitidos)
+2. [Códigos de Respuesta](#codigos-de-respuesta)
+3. [Formatos de Salida](#formatos-de-salida)
+4. [Tabla de rutas API REST](#tabla-de-rutas-api-rest)
 
 
 ## Métodos HTTP permitidos
@@ -60,9 +63,8 @@ Tenemos habilitado sólo el formato JSON, pero en cualquier momento de una forma
 
 Las rutas de la api estrán a partir de **api.v1.reserving.com.es**, esta será la ruta raiz desde donde empesaremos a entregar nuestros servicios. Esta **API estará versionada por la url**, de esta forma podemos trabajar en nuevas versiones sin afecta a la que este en producción. A continuación mostramos la tabla de rutas para cada uno de los recursos entregados.
 
-URL Base de todos los recursos: http://api.reserving.me/
-
-Documentación de cada recurso: http://api.reserving.me
+ - URL Base de todos los recursos: http://api.reserving.me/
+ - Documentación de cada recurso: http://api.reserving.me
 
  **CITAS**
 
