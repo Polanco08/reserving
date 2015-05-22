@@ -100,15 +100,20 @@
         <!-- Inicio .pageheader -->
         <div class="pageheader">
             <h2>
-                <i class="fa fa-users[[Page.icon()]]"></i>
-                [[Page.title()]]Página
-                <span>[[Page.description()]] Descripción de la página</span>
+                <i class="fa fa-users"></i>
+                Página
+                <span>Descripción de la página</span>
             </h2>
+            <div class="breadcrumb-wrapper">
+                <span class="label"><i class="fa fa-street-view fa-lg"></i> Estas en:</span>
+                <div ncy-breadcrumb></div>
+            </div>
+
         </div>
         <!-- Final .pageheader -->
 
 
-        <div class="wrapper-content">
+        <div class="contentpanel">
             <div ui-view></div>
         </div>
 

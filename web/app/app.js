@@ -4,6 +4,8 @@
     angular.module('reservingApp', [
             'ui.router',
             'ngResource',
+            'ui.bootstrap',
+            'ncy-angular-breadcrumb',
 
             'Citas',
             'Empleados',
@@ -30,7 +32,10 @@
                     // Citas State - Master template
                     .state('reseving', {
                         url: "/",
-                        templateUrl: "/app/citas/views/main.tpl.html"
+                        templateUrl: "/app/citas/views/main.tpl.html",
+                        ncyBreadcrumb: {
+                            label: 'Inicio'
+                        }
                     })
 
                     // Empleados State
@@ -39,11 +44,15 @@
                         abstract: true,
                         controller: 'EmpleadosController',
                         url: '/empleados',
-                        templateUrl: '/app/empleados/views/index.tpl.html'
+                        templateUrl: '/app/empleados/views/index.tpl.html',
                     })
                     .state('empleados.list', {
                             url: '',
-                            templateUrl: '/app/empleados/views/lista.tpl.html'
+                            templateUrl: '/app/empleados/views/lista.tpl.html',
+                            ncyBreadcrumb: {
+                                label: 'Empleados',
+                                parent: 'reseving'
+                            }
                         })
 
 
@@ -65,15 +74,27 @@
                     })
                     .state('clientes.list', {
                         url: '',
-                        templateUrl: '/app/clientes/views/lista.tpl.html'
+                        templateUrl: '/app/clientes/views/lista.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'clientes',
+                            parent: 'reseving'
+                        }
                     })
                     .state('clientes.nuevo',{
                         url: '/nuevo',
-                        templateUrl: '/app/clientes/views/nuevo.tpl.html'
+                        templateUrl: '/app/clientes/views/nuevo.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Nuevo cliente',
+                            parent: 'clientes.list'
+                        }
                     })
                     .state('clientes.detalle', {
                         url: '/{clienteId:[0-9]{1,4}}/detalle',
-                        templateUrl: '/app/clientes/views/detalle.tpl.html'
+                        templateUrl: '/app/clientes/views/detalle.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Cliente ',
+                            parent: 'clientes.list'
+                        }
                     })
 
 
@@ -87,7 +108,27 @@
                     })
                     .state('servicios.list', {
                         url: '',
-                        templateUrl: '/app/servicios/views/lista.tpl.html'
+                        templateUrl: '/app/servicios/views/lista.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Servicios',
+                            parent: 'reseving'
+                        }
+                    })
+                    .state('servicios.nuevo',{
+                        url: '/nuevo',
+                        templateUrl: '/app/servicios/views/nuevo.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Nuevo Servicio',
+                            parent: 'servicios.list'
+                        }
+                    })
+                    .state('servicios.detalle', {
+                        url: '/{servicioId:[0-9]{1,4}}/detalle',
+                        templateUrl: '/app/servicios/views/detalle.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Cliente ',
+                            parent: 'clientes.list'
+                        }
                     })
             }])
 })();

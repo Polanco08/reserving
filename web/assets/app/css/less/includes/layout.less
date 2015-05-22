@@ -127,18 +127,42 @@
 	  }
 	}
   }
+
+  .breadcrumb-wrapper{
+	position: absolute;
+	top: 23px;
+	right: 25px;
+
+	.label {
+	  color:@gray;
+	  text-transform: uppercase;
+	  font-size: 11px;
+	  font-weight: normal;
+	  display: inline-block;
+	  font-weight: bold;
+	}
+	.breadcrumb {
+	  background: none;
+	  display: inline-block;
+	  padding: 0;
+
+	  li {
+		font-size: 12px;
+	  }
+
+	  &>li{
+		display: inline-block;
+	  }
+	}
+  }
 }
-
-
-
-
 
 // Left Panel Block
 //-----------------------------------------------
 .leftpanel{
   width: 240px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -172,7 +196,6 @@
 	padding: 5px 15px;
   }
 }
-
 .nav{
   &-bracket{
 	margin-bottom: @padding-base-vertical*3;
@@ -204,6 +227,13 @@
 	}
 
   }
+}
+
+// Bloque contenido principal
+//-----------------------------------------------
+.contentpanel{
+  padding: 20px;
+  position: relative;
 }
 
 

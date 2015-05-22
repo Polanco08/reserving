@@ -64,6 +64,19 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+.caja-sombra {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  background: #fcfcfc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  -webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+}
 .headerbar__menu .dropdown-toggle:hover,
 .headerbar__menu .dropdown-toggle:focus,
 .headerbar__menu .dropdown-toggle:active,
@@ -79,6 +92,12 @@
 .btn-group-vertical > .btn {
   position: relative;
   float: left;
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
 }
 /** ESTILOS GLOBALES
 ----------------------------------------------------------*/
@@ -229,10 +248,34 @@ h5 {
   margin: 0 10px 0 5px;
   color: #95a5a6;
 }
+.pageheader .breadcrumb-wrapper {
+  position: absolute;
+  top: 23px;
+  right: 25px;
+}
+.pageheader .breadcrumb-wrapper .label {
+  color: #95a5a6;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: normal;
+  display: inline-block;
+  font-weight: bold;
+}
+.pageheader .breadcrumb-wrapper .breadcrumb {
+  background: none;
+  display: inline-block;
+  padding: 0;
+}
+.pageheader .breadcrumb-wrapper .breadcrumb li {
+  font-size: 12px;
+}
+.pageheader .breadcrumb-wrapper .breadcrumb > li {
+  display: inline-block;
+}
 .leftpanel {
   width: 240px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -290,6 +333,10 @@ h5 {
   margin-right: 10px;
   width: 16px;
   text-align: center;
+}
+.contentpanel {
+  padding: 20px;
+  position: relative;
 }
 .footer {
   padding: 10px;
