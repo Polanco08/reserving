@@ -6,6 +6,11 @@
     <meta name="description" content="Reserving, el gestor de citas que te ayudará a organizar tu negocio.">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset("apple-icon-180x180.png")}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{asset("android-icon-192x192.png")}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset("favicon-32x32.png")}}">
+
+
 
     {% block stylesheets %}
         <!-- build:css(.) styles/vendor.css -->
@@ -17,13 +22,13 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="{{ asset("assets/app/css/less/main.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/app/css/main.css") }}">
         <!-- endbuild -->
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="" />
 </head>
 
-<body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
+<body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}" class="">
     <section id="page" class="main-page">
         {% block body %}
             {% block content %}{% endblock %}
@@ -42,7 +47,7 @@
     <script src="{{ asset("bower_components/angular-loading-bar/build/loading-bar.js") }}"></script>
     <script src="{{ asset("bower_components/angular-bootstrap/ui-bootstrap-tpls.js") }}"></script>
     <script src="{{ asset("bower_components/angular-ui-router/release/angular-ui-router.js") }}"></script>
-    <script src="{{ asset("bower_components/metisMenu/dist/metisMenu.js") }}"></script>
+    <script src="{{ asset("bower_components/angular-breadcrumb/dist/angular-breadcrumb.js") }}"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -57,6 +62,7 @@
     <script src="{{ asset("app/servicios/ServiciosService.js") }}"></script>
     <script src="{{ asset("app/servicios/ServiciosController.js") }}"></script>
     <script src="{{ asset("app/app.js") }}"></script>
+    <script src="{{ asset("assets/app/js/main.js")}}"></script>
 
     <!-- endbuild -->
 
