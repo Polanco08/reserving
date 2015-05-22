@@ -66,7 +66,8 @@ Las rutas de la api estrán a partir de **api.v1.reserving.com.es**, esta será 
  - URL Base de todos los recursos: http://api.reserving.me/
  - Documentación de cada recurso: http://api.reserving.me
 
- **CITAS**
+
+**CITAS**
 
        RECURSO URI         |           GET         |        PUT         |        POST        |      DELETE        
 ---------------------------|-----------------------|--------------------|--------------------|--------------------
@@ -74,7 +75,7 @@ Las rutas de la api estrán a partir de **api.v1.reserving.com.es**, esta será 
   `/v1/citas/{id}`         |   Detalle cita        | Actualiza una Cita |    Nueva cita      |  Elimina una cita  
    
 
- **CLIENTES**
+**CLIENTES**
 
        RECURSO URI         |           GET         |        PUT         |        POST        |      DELETE        
 ---------------------------|-----------------------|--------------------|--------------------|--------------------
