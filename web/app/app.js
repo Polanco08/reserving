@@ -66,7 +66,7 @@
                         url: '/{empleadoId:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/empleados/views/detalle.tpl.html',
                         ncyBreadcrumb: {
-                            label: 'empleado ',
+                            label: 'Detalle Empleado ',
                             parent: 'empleados.list'
                         }
                     })
