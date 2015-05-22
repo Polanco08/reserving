@@ -99,6 +99,10 @@
 .panel-title a {
   cursor: pointer;
 }
+.panel-default {
+  border-color: #e7e7e7;
+  background-color: #fff;
+}
 /** ESTILOS GLOBALES
 ----------------------------------------------------------*/
 body {
