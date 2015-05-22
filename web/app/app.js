@@ -142,8 +142,8 @@
                         url: '/{servicioId:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/servicios/views/detalle.tpl.html',
                         ncyBreadcrumb: {
-                            label: 'Cliente ',
-                            parent: 'clientes.list'
+                            label: 'Detalle servicio ',
+                            parent: 'servicios.list'
                         }
                     })
             }])
