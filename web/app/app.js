@@ -44,7 +44,7 @@
                         abstract: true,
                         controller: 'EmpleadosController',
                         url: '/empleados',
-                        templateUrl: '/app/empleados/views/index.tpl.html',
+                        templateUrl: '/app/empleados/views/index.tpl.html'
                     })
                     .state('empleados.list', {
                             url: '',
@@ -54,6 +54,22 @@
                                 parent: 'reseving'
                             }
                         })
+                    .state('empleados.nuevo',{
+                        url: '/nuevo',
+                        templateUrl: '/app/empleados/views/nuevo.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Nuevo empleado',
+                            parent: 'empleados.list'
+                        }
+                    })
+                    .state('empleados.detalle', {
+                        url: '/{empleadoId:[0-9]{1,4}}/detalle',
+                        templateUrl: '/app/empleados/views/detalle.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'empleado ',
+                            parent: 'empleados.list'
+                        }
+                    })
 
 
                     // Clientes state
