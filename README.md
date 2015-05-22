@@ -76,7 +76,6 @@ Las rutas de la api estrán a partir de **api.v1.reserving.com.es**, esta será 
 
  **CLIENTES**
 
-
        RECURSO URI         |           GET         |        PUT         |        POST        |      DELETE        
 ---------------------------|-----------------------|--------------------|--------------------|--------------------
   `/v1/clientes/`          | listado de clientes   |        ---         |        ---         |       ---          
@@ -84,7 +83,6 @@ Las rutas de la api estrán a partir de **api.v1.reserving.com.es**, esta será 
 
 
 **EMPLEADOS**
-
 
        RECURSO URI         |           GET         |        PUT         |        POST        |      DELETE        
 ---------------------------|-----------------------|--------------------|--------------------|--------------------
