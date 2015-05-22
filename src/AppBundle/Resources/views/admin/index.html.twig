@@ -8,33 +8,40 @@
 
         <!-- Inicio .logopanel -->
         <div class="leftpanel__logo">
-            <img alt="Reserving " src="{{asset("assets/app/images/logo.png")}}" class="img-responsive">
+            <img alt="Reserving " src="{{asset("assets/app/images/isotipo.png")}}" class="img-responsive">
+            <h1>
+                RESERVING
+                <span>Gestor de citas online.</span>
+            </h1>
         </div>
         <!-- Inicio .logopanel -->
 
         <!-- Inicio .leftpane__linner -->
         <div class="leftpanel__inner">
-            <h5 class="leftpanel__title">Navegación</h5>
 
             <ul class="nav nav-pills nav-stacked nav-bracket">
                 <li ui-sref-active="active">
                     <a ui-sref="reseving">
-                        <i class="glyphicon glyphicon-calendar"></i>Calendario
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        <span>Calendario</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="empleados.list">
-                        <i class="glyphicon glyphicon-briefcase"></i>Empleados
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        <span>Empleados</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="clientes.list">
-                        <i class="glyphicon glyphicon-adjust"></i>Clientes
+                        <i class="glyphicon glyphicon-adjust"></i>
+                        <span>Clientes</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="servicios.list">
-                        <i class="glyphicon glyphicon-star-empty"></i>Servicios
+                        <i class="glyphicon glyphicon-star-empty"></i>
+                        <span>Servicios</span>
                     </a>
                 </li>
             </ul>
@@ -50,7 +57,7 @@
 
         <!-- Inicio .headerbar -->
         <div class="headerbar">
-            <a class="menutoggle menu-collapsed"><i class="fa fa-bars"></i></a>
+            <a class="menutoggle"><i class="fa fa-bars"></i></a>
             <div class="headerbar__right pull-right">
                 <ul class="headerbar__menu">
                     <li>
@@ -65,7 +72,8 @@
                                 <li><a href=""><i class="glyphicon glyphicon-cog"></i> Configuraciones</a></li>
                                 <li>
                                     <a href="{{ path('fos_user_security_logout') }}">
-                                        <i class="glyphicon glyphicon-log-out"></i> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                        <i class="glyphicon glyphicon-log-out"></i>
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                                     </a>
                                 </li>
                             </ul>

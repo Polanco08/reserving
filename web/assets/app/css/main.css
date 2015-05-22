@@ -153,6 +153,10 @@ h5 {
 .mainpanel {
   margin-left: 240px;
   padding-top: 50px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .headerbar {
   position: fixed;
@@ -339,6 +343,10 @@ h5 {
   left: 0;
   z-index: 100;
   background: #1d2939;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .leftpanel__logo {
   position: fixed;
@@ -347,13 +355,37 @@ h5 {
   width: 240px;
   height: 50px;
   z-index: 100;
-  padding: 10px;
+  padding: 1px 10px;
   background: #fff;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .leftpanel__logo img {
-  width: 70%;
-  height: auto;
-  margin: auto;
+  width: 45px;
+  display: inline-block;
+  -webkit-transition: all 0s ease;
+  -moz-transition: all 0s ease;
+  -o-transition: all 0s ease;
+  transition: all 0s ease;
+}
+.leftpanel__logo h1 {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 25px;
+  vertical-align: middle;
+  margin: 0;
+  color: #1d2939;
+  font-weight: bold;
+}
+.leftpanel__logo h1 span {
+  display: block;
+  color: #c64d2d;
+  font-size: 13px;
+  line-height: 12px;
+  font-weight: normal;
 }
 .leftpanel__title {
   font-size: 11px;
@@ -376,6 +408,12 @@ h5 {
 .nav-bracket > li > a {
   color: #95a5a6;
 }
+.nav-bracket > li > a > span {
+  -webkit-transition: all all 0.5s ease-out;
+  -moz-transition: all all 0.5s ease-out;
+  -o-transition: all all 0.5s ease-out;
+  transition: all all 0.5s ease-out;
+}
 .nav-bracket > li > a:hover {
   background-color: #fff;
   color: #1d2939;
@@ -392,6 +430,72 @@ h5 {
   margin-right: 10px;
   width: 16px;
   text-align: center;
+}
+.leftpanel-collapsed .mainpanel {
+  margin-left: 50px;
+}
+.leftpanel-collapsed .headerbar {
+  left: 50px;
+}
+.leftpanel-collapsed .leftpanel {
+  width: 50px;
+  top: 0;
+}
+.leftpanel-collapsed .leftpanel__inner {
+  padding: 5px;
+  margin-top: 50px;
+}
+.leftpanel-collapsed .nav-bracket {
+  margin-bottom: 30px;
+}
+.leftpanel-collapsed .nav-bracket > li + li {
+  margin-top: 5px;
+  margin-left: 0;
+}
+.leftpanel-collapsed .nav-bracket > li > a {
+  padding-left: 13px;
+}
+.leftpanel-collapsed .nav-bracket > li > a > span:last-child {
+  position: absolute;
+  background: #fff;
+  padding: 10px 10px 10px 5px;
+  left: 40px;
+  top: 0;
+  min-width: 209px;
+  text-align: left;
+  z-index: 100;
+  display: none;
+  -webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  -moz-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
+  -webkit-border-top-right-radius: 0 2px 2px 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0 2px 2px 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0 2px 2px 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.leftpanel-collapsed .leftpanel__logo {
+  padding: 7px;
+  text-align: left;
+}
+.leftpanel-collapsed .leftpanel__logo h1 {
+  display: none;
+}
+.leftpanel-collapsed .leftpanel__logo img {
+  width: 37px;
+}
+.leftpanel-collapsed .headerbar__right {
+  margin-right: 50px;
 }
 .contentpanel {
   padding: 20px;
