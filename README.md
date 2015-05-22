@@ -1,7 +1,7 @@
 reserving Web APP
 ===========================
 
-### .API REST FUll RESERVING
+### API REST FUll RESERVING
 
 La API esta desarrollada utilizando **Symfony version 2.3**:
 
@@ -20,7 +20,7 @@ Esta API es [RESFULL](http://en.wikipedia.org/wiki/Overview_of_RESTful_API_Descr
 
 ## Tabla de contenido
 1. [Métodos HTTP permitidos](#métodos-http-permitidos)
-2. [Códigos de Respuesta](#codigos-de-respuesta)
+2. [Códigos de Respuesta](#códigos-de-respuesta)
 3. [Formatos de Salida](#formatos-de-salida)
 4. [Tabla de rutas API REST](#tabla-de-rutas-api-rest)
 
