@@ -20,25 +20,25 @@
         <div class="leftpanel__inner">
 
             <ul class="nav nav-pills nav-stacked nav-bracket">
-                <li ui-sref-active="active">
+                <li  ng-class="{ active: $state.includes('reseving') }">
                     <a ui-sref="reseving">
                         <i class="glyphicon glyphicon-calendar"></i>
                         <span>Citas</span>
                     </a>
                 </li>
-                <li ui-sref-active="active">
+                <li ng-class="{ active: $state.includes('empleados') }">
                     <a ui-sref="empleados.list">
                         <i class="glyphicon glyphicon-briefcase"></i>
                         <span>Empleados</span>
                     </a>
                 </li>
-                <li ui-sref-active="active">
+                <li ng-class="{ active: $state.includes('clientes') }">
                     <a ui-sref="clientes.list">
                         <i class="glyphicon glyphicon-adjust"></i>
                         <span>Clientes</span>
                     </a>
                 </li>
-                <li ui-sref-active="active">
+                <li ng-class="{ active: $state.includes('servicios') }">
                     <a ui-sref="servicios.list">
                         <i class="glyphicon glyphicon-star-empty"></i>
                         <span>Servicios</span>

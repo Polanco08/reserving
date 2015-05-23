@@ -19,6 +19,20 @@
             $interpolateProvider.endSymbol(']]');
         }])
 
+        /*
+        * Esta configuración nos permite tener una referencia disponible en cualquier ambito de la aplicación
+        * a : $state, $stateParams, $rootScope. Por ejemplo : <Li ng-class = "{activos: $state.includes('servicios')}">
+        * Esto estará activo siempre que este activo uno de sus decendientes (servicios).
+        * */
+        .run(['$rootScope', '$state', '$stateParams',
+                function ($rootScope,   $state,   $stateParams) {
+                    $rootScope.$state = $state;
+                    $rootScope.$stateParams = $stateParams;
+                }
+            ]
+        )
+
+
         .config(['$stateProvider','$urlRouterProvider',
             function ($stateProvider,$urlRouterProvider) {
 
