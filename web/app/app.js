@@ -6,6 +6,7 @@
             'ngResource',
             'ui.bootstrap',
             'ncy-angular-breadcrumb',
+            'angular-loading-bar',
 
             'Citas',
             'Empleados',

@@ -2,16 +2,14 @@
     'use strict';
 
     angular.module('Servicios')
-        .controller('ServiciosController',["$scope", "serviciosResource", function($scope, serviciosResource){
-            $scope.listadoServicios = serviciosResource.getServicios();
-            $scope.detalleServicio = {};
+        .controller('ServiciosController',
+            ["$scope", "$stateParams", "serviciosResource", function($scope, $stateParams, serviciosResource){
 
-            $scope.nuevoServicio = function(){
+                $scope.listadoServicios = serviciosResource.getServicios();
+                console.log($stateParams.servicioId);
+
+                $scope.nuevoServicio = function(){
                 console.log("Nuevo servicio...");
-            }
-
-            $scope.servicioDetalle = function(servicio){
-
             }
         }])
 })();
