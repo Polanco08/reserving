@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('reservingApp')
+    angular.module('reservingApp', [])
 
         .factory('tools', function(){
             return {

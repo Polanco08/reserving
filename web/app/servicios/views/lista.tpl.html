@@ -6,7 +6,7 @@
             </div>
             <div class="panel-body">
                 <p>[[titulo]] <span class="label label-info"> X </span> [[orderList]]</p>
-                <a ng-click="" class="btn btn-success btn-block" ui-sref="servicios.nuevo">Nuevo Servicio</a>
+                <a ng-click="nuevoServicio()" class="btn btn-success btn-block" ui-sref="servicios.nuevo">Nuevo Servicio</a>
             </div>
             <div class="panel-footer"></div>
         </div>
@@ -14,7 +14,30 @@
     <div class="col-sm-9">
         <div class="panel panel-default">
             <div class="panel-body">
-                contenido...
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Duración</th>
+                            <th>Precio</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="servicio in listadoServicios | orderBy: orderList.type | filter:search">
+                            <td>[[servicio.nombre]]</td>
+                            <td>[[servicio.descripcion]]</td>
+                            <td>[[servicio.duracion]] Min.</td>
+                            <td>[[servicio.precio | currency : " €" ]] </td>
+                            <td width="30">
+                                <a ng-click="" ui-sref="servicios.detalle({servicioId:[[servicio.id]] })">Detalles</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
