@@ -27,17 +27,24 @@
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <label for="duracion">Tiempo estimado</label>
                                         <select ng-model="servicio.duracion" class="form-control" name="duracion" id="duracion">
                                             <option ng-repeat="dur in duracion" value="[[dur]]">[[dur]] Min</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="precio">Precio</label>
-                                            <input ng-model="servicio.precio" type="text" class="form-control mb-md" id="precio" placeholder="Precio del servicio">
+                                            <input ng-model="servicio.precio" type="text" class="form-control mb-md"
+                                                   id="precio" placeholder="Precio del servicio">
                                         </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="empleado">Empleado que lo orealiza</label>
+                                        <select ng-model="servicio.empleado" class="form-control" id="empleado">
+                                            <option ng-model="servicio.empleado" ng-repeat="empleado in empleados" value="[[empleado.id]]">[[empleado.nombre]]</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
