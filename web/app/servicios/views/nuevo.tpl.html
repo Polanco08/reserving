@@ -5,7 +5,7 @@
                 <div class="panel-title">Opciones de servicio</div>
             </div>
             <div class="panel-body">
-                - empleado select
+
             </div>
             <div class="panel-footer"></div>
         </div>
@@ -13,7 +13,47 @@
     <div class="col-sm-9">
         <div class="panel panel-default">
             <div class="panel-body">
-                contenido...
+                <form id="servicioForm">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="nombre">Nombre del servicio</label>
+                                <input ng-model="servicio.nombre" type="text" class="form-control mb-md" id="nombre" placeholder="Nombre del servicio">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea ng-model="servicio.descripcion" class="form-control mb-md" id="descripcion"
+                                          placeholder="Describe brevemente el servicio"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="duracion">Tiempo estimado</label>
+                                        <select ng-model="servicio.duracion" class="form-control" name="duracion" id="duracion">
+                                            <option ng-repeat="dur in duracion" value="[[dur]]">[[dur]] Min</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="precio">Precio</label>
+                                            <input ng-model="servicio.precio" type="text" class="form-control mb-md" id="precio" placeholder="Precio del servicio">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="enableToReserved">
+                                    <input type="checkbox" ng-model="servicio.habilitado_para_reserva" id="enableToReserved">
+                                    Los clientes pueden reservar este servicio - [[ habilitado_para_reserva ]]
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <hr/>
+                <a ng-click="save(servicio)" class="btn btn-success">Guardar</a>
+                <a ui-sref="servicios.list" class="btn btn-default">Cancelar</a>
             </div>
         </div>
     </div>

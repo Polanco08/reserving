@@ -93,14 +93,6 @@
                         abstract: true,
                         url: '/clientes',
                         templateUrl: '/app/clientes/views/index.tpl.html',
-                        /*resolve:{
-                         ClienteResource: 'ClienteResource',
-                         clientes: function(ClienteResource){
-
-                         // This line is updated to return the promise
-                         return ClienteResource.query().$promise;
-                         }
-                         },*/
                         controller: 'ClientesController'
                     })
                     .state('clientes.list', {

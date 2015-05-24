@@ -72,6 +72,14 @@
   left: 10px;
 }
 
+.leftpanel-collapsed #loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 27px;
+    left: 27px;
+}
+
 #loading-bar-spinner .spinner-icon {
   width: 14px;
   height: 14px;
