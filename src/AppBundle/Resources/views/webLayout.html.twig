@@ -6,8 +6,8 @@
 
     {% block stylesheets %}{% endblock %}
     <link rel="stylesheet" href="{{ asset("assets/web/css/bootstrap_theme.css") }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/web/css/main.css') }}" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/web/main.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon-32x32.png') }}" />
 </head>
 <body id="{% if currentpage is defined %}{{ currentpage }}{% endif %}">
 {% block body %}

@@ -13,7 +13,7 @@
 	display: block;
 	.transition();
 	&-scroller{
-	  padding: 13px;
+	  padding: 7px;
 	  max-width: 200px;
 	  display: block;
 	  .transition();
@@ -138,10 +138,16 @@
   }
 }
 
-  @-webkit-keyframes fleacha {
-	0%, 20%, 40%, 100%{bottom: 50px;}
-	10%, 30%{bottom: 30px;}
-  }
+@-webkit-keyframes fleacha {
+  0%, 20%, 40%, 100%{bottom: 50px;}
+  10%, 30%{bottom: 30px;}
+}
+
+
+.planes-precios{
+
+}
+
 
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE
@@ -162,9 +168,21 @@
 
 
 
+// common Styles
+//-------------------------------------------------
+.innerbox{
 
-
-
+  &-sm{
+	padding: 0 @padding-base-vertical;
+  }
+  &-md{
+	padding: 0 @padding-base-vertical*2;
+  }
+  &-lg{
+	padding:@padding-base-vertical*3;
+	padding-bottom: 0;
+  }
+}
 
 
 /*------------------------------------*\

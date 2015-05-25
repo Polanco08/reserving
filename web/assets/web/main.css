@@ -130,7 +130,7 @@ h1 {
   transition: all 0.2s ease-out;
 }
 .logo-scroller {
-  padding: 13px;
+  padding: 7px;
   max-width: 200px;
   display: block;
   -webkit-transition: all 0.2s ease-out;
@@ -280,6 +280,16 @@ h1 {
 .login-wraper .checkbox label {
   padding-left: 25px;
   color: #18bc9c;
+}
+.innerbox-sm {
+  padding: 0 10px;
+}
+.innerbox-md {
+  padding: 0 20px;
+}
+.innerbox-lg {
+  padding: 30px;
+  padding-bottom: 0;
 }
 /*------------------------------------*\
 	BOOTSTRAP OVERRIDE

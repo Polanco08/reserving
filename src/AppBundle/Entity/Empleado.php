@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -15,6 +16,16 @@ use JMS\Serializer\Annotation\Exclude;
  */
 class Empleado
 {
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->citas = new ArrayCollection();
+        $this->servicios = new ArrayCollection();
+    }
+
+
     /**
      * @var integer
      *
@@ -75,6 +86,12 @@ class Empleado
      * @ORM\OneToMany(targetEntity="Cita", mappedBy="empleado")
      */
     private $citas;
+
+    /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="Servicio", inversedBy="empleados")
+     */
+    private $servicios;
 
 
 
@@ -225,13 +242,7 @@ class Empleado
     {
         return $this->usuario;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->citas = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+
 
     /**
      * Add citas
@@ -264,5 +275,38 @@ class Empleado
     public function getCitas()
     {
         return $this->citas;
+    }
+
+    /**
+     * Add servicios
+     *
+     * @param \AppBundle\Entity\Servicio $servicios
+     * @return Empleado
+     */
+    public function addServicio(\AppBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios[] = $servicios;
+
+        return $this;
+    }
+
+    /**
+     * Remove servicios
+     *
+     * @param \AppBundle\Entity\Servicio $servicios
+     */
+    public function removeServicio(\AppBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios->removeElement($servicios);
+    }
+
+    /**
+     * Get servicios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getServicios()
+    {
+        return $this->servicios;
     }
 }

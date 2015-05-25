@@ -11,18 +11,17 @@ angular.module('Servicios')
             $scope.empleados = EmpleadoResource.query();
             $scope.listadoServicios = serviciosResource.query();
 
-                console.log($scope.empleados);
-
             // Nuevo servicio
             $scope.save = function(servicio){
                if(!servicio.id){
-                   var s = new serviciosResource();
+                   var s = new serviciosResource(servicio);
+                   console.log(servicio.usuario);
                    s.nombre = servicio.nombre;
                    s.descripcion = servicio.descripcion;
                    s.precio = servicio.precio;
                    s.duracion = servicio.duracion;
                    s.habilitado_para_reserva = servicio.habilitado_para_reserva;
-                   s.empleado = servicio.empleado;
+                   s.empleados = $scope.empleados;
                    s.$save(function(){
                        $scope.listadoServicios.push(s);
                    });
