@@ -5,7 +5,7 @@
                 <div class="panel-title">Opciones de servicio</div>
             </div>
             <div class="panel-body">
-                <p>[[titulo]] <span class="label label-info"> X </span> [[orderList]]</p>
+                <p>[[titulo]] <span class="label label-info"> [[listadoServicios.length]] </span> [[orderList]]</p>
                 <a ng-click="nuevoServicio()" class="btn btn-success btn-block" ui-sref="servicios.nuevo">Nuevo Servicio</a>
             </div>
             <div class="panel-footer"></div>
@@ -31,11 +31,11 @@
                             <td>[[servicio.descripcion]]</td>
                             <td>[[servicio.duracion]] Min.</td>
                             <td>[[servicio.precio | currency : " €" ]] </td>
-                            <td width="30">
-                                <a ng-click="servicioDetalle()" ui-sref="servicios.detalle({servicioId:servicio.id})">
+                            <td>
+                                <a class="btn btn-xs btn-success" ng-click="getDetalle(servicio)" ui-sref="servicios.detalle({servicioId:servicio.id})">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a ng-click="save(servicio)" ui-sref="servicios.nuevo">
+                                <a class="btn btn-xs btn-default" ng-click="save(servicio)" ui-sref="servicios.editar">
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </td>

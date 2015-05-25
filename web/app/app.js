@@ -149,7 +149,15 @@
                         url: '/{servicioId:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/servicios/views/detalle.tpl.html',
                         ncyBreadcrumb: {
-                            label: 'Detalle servicio ',
+                            label: 'Detalle servicio [[servicio.id]] ',
+                            parent: 'servicios.list'
+                        }
+                    })
+                    .state('servicios.editar', {
+                        url: '/{servicioId:[0-9]{1,4}}/edit',
+                        templateUrl: '/app/servicios/views/editar.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Editar servicio ',
                             parent: 'servicios.list'
                         }
                     })

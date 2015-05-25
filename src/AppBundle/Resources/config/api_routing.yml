@@ -4,6 +4,7 @@ api_usuario:
 
 api_cliente:
     type: rest
+    pare
     resource: AppBundle\Controller\ClienteController
 
 
