@@ -203,7 +203,7 @@ h1 {
 }
 #landing-header {
   text-align: center;
-  background: url("../img/landing-home-bg-1.jpg") fixed center center;
+  background: url("img/landing-home-bg-1.jpg") fixed center center;
   background-size: cover;
   height: 100%;
 }
@@ -254,6 +254,67 @@ h1 {
   30% {
     bottom: 30px;
   }
+}
+.plan {
+  text-align: center;
+  display: inline-block;
+}
+.plan-inner {
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.plan .plan__header {
+  background: #c64d2d;
+  color: #fff;
+  padding-bottom: 10px;
+}
+.plan .plan__header .titulo {
+  margin: 0;
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: solid 1px #b14528;
+}
+.plan .plan__header .precio {
+  font-size: 42px;
+}
+.plan .plan__header .precio span {
+  display: block;
+  font-size: 14px;
+  margin-top: -11px;
+}
+.plan .plan__carateristicas {
+  list-style: none;
+  padding: 0;
+}
+.plan .plan__carateristicas .item {
+  padding: 10px;
+}
+.plan .plan__carateristicas .item + .item {
+  border-top: solid 1px #ecf0f1;
+}
+.plan .plan__carateristicas .item span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+.plan .plan__btnaction {
+  margin: 10px;
+  display: block !important;
+}
+.plan.plan-premium .plan__header {
+  background: #3498db;
+}
+.plan.plan-premium .plan__header .titulo {
+  border-bottom: solid 1px #258cd1;
+}
+.plan.plan-gold .plan__header {
+  background: #f39c12;
+}
+.plan.plan-gold .plan__header .titulo {
+  border-bottom: solid 1px #e08e0b;
 }
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE

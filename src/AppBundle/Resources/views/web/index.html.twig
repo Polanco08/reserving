@@ -4,8 +4,8 @@
 
 {% block content %}
 
-    <!-- page content -->
-    <div id="caracteristicas" class="content-box">
+    <!-- Bloque a quien va dirigido -->
+    <section id="caracteristicas" class="content-box">
         <div class="container">
 
             <h2 class="text-center text-primary">¿A quién va <strong>dirigido</strong>?</h2>
@@ -38,8 +38,6 @@
                 </div>
             </div>
 
-
-
             <div class="row hidden-xs">
                 <div class="col-md-3 text-center">
                     <div class="innerbox-lg">
@@ -67,15 +65,68 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Final Bloque a quien va dirigido -->
 
-    <!-- page planesPrecios -->
-    <div id="planesPrecios" class="content-box gray">
+    <!-- Bloque planesPrecios -->
+    <section id="planesPrecios" class="content-box gray">
         <div class="container">
-            <h2 class="text-center">Planes y precios</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae earum et, harum in modi natus necessitatibus neque odit optio porro praesentium, quis rem reprehenderit, soluta sunt tenetur velit voluptas!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae earum et, harum in modi natus necessitatibus neque odit optio porro praesentium, quis rem reprehenderit, soluta sunt tenetur velit voluptas!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae earum et, harum in modi natus necessitatibus neque odit optio porro praesentium, quis rem reprehenderit, soluta sunt tenetur velit voluptas!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae earum et, harum in modi natus necessitatibus neque odit optio porro praesentium, quis rem reprehenderit, soluta sunt tenetur velit voluptas!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae earum et, harum in modi natus necessitatibus neque odit optio porro praesentium, quis rem reprehenderit, soluta sunt tenetur velit voluptas!</p>
+            <div class="plan-container">
+                <h2 class="text-center">Planes y precios</h2>
+                <hr/>
+                <div class="col-sm-4 col-sm-offset-1 plan plan-gratis">
+                    <div class="plan-inner">
+                        <div class="plan__header">
+                            <h4 class="titulo">Plan Gratuito</h4>
+                            <p class="precio text-center">Gratis <span>Para siempre</span></p>
+                        </div>
+                        <ul class="plan__carateristicas">
+                            <li data-tooltip="" class="item">
+                                Reservas por mes<span>30</span>
+                            </li>
+                            <li data-tooltip="" class="item">Total de clientes <span>80</span></li>
+                            <li data-tooltip="" class="item">Gestión de clientes</li>
+                            <li data-tooltip="" class="item">Gestión de servicios</li>
+                        </ul>
+                        <a class="plan__btnaction btn btn-custom" href="{{path("fos_user_registration_register")}}">Empieza con el plan gratuito</a>
+                    </div>
+                </div>
+                <div class="col-sm-3 plan plan-premium">
+                    <div class="plan-inner">
+                        <div class="plan__header">
+                            <h4 class="titulo">Plan Premium</h4>
+                            <p class="precio text-center">10<sup>€</sup> <span>Mensualmente</span></p>
+                        </div>
+                        <ul class="plan__carateristicas">
+                            <li data-tooltip="" class="item">
+                                Reservas por mes<span>30</span>
+                            </li>
+                            <li data-tooltip="" class="item">Total de clientes <span>80</span></li>
+                            <li data-tooltip="" class="item">Gestión de clientes</li>
+                            <li data-tooltip="" class="item">Gestión de servicios</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 plan plan-gold">
+                    <div class="plan-inner">
+                        <div class="plan__header">
+                            <h4 class="titulo">Plan Gold</h4>
+                            <p class="precio text-center">25<sup>€</sup> <span>Mensualmente</span></p>
+                        </div>
+                        <ul class="plan__carateristicas">
+                            <li data-tooltip="" class="item">
+                                Reservas por mes<span>30</span>
+                            </li>
+                            <li data-tooltip="" class="item">Total de clientes <span>80</span></li>
+                            <li data-tooltip="" class="item">Gestión de clientes</li>
+                            <li data-tooltip="" class="item">Gestión de servicios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    <!-- Final Bloque planesPrecios -->
 
     <div id="servicios" class="content-box">
         <div class="container">

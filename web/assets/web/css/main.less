@@ -88,7 +88,7 @@
 
 #landing-header{
   text-align: center;
-  background: url("../img/landing-home-bg-1.jpg") fixed center center;
+  background: url("img/landing-home-bg-1.jpg") fixed center center;
   background-size: cover;
 
   height: 100%;
@@ -144,8 +144,78 @@
 }
 
 
-.planes-precios{
+.plan{
+  text-align: center;
+  display: inline-block;
 
+  &-inner{
+	background: #fff;
+	.rounded(4px;);
+	overflow: hidden;
+  }
+
+  .plan__header{
+	background: @brand-naranja;
+	color: #fff;
+	padding-bottom: 10px;
+
+	.titulo{
+	  margin: 0;
+	  font-size: 18px;
+	  padding: 10px 0;
+	  border-bottom: solid 1px darken(@brand-naranja, 5%);
+	}
+	.precio{
+	  font-size: 42px;
+	  span{
+		display:block;
+		font-size: 14px;
+		margin-top:-11px;
+	  }
+	}
+  }
+  .plan__carateristicas{
+	list-style: none;
+	padding: 0;
+
+	.item{
+		padding: 10px;
+		& + .item{border-top:solid 1px @gray-lighter;}
+
+	  span{
+		display:block;
+		font-size: 24px;
+		font-weight: bold;
+	  }
+	}
+  }
+  .plan__btnaction{
+	margin: 10px;
+	display: block !important;
+  }
+
+
+  &.plan-gratis{}
+
+  &.plan-premium{
+	.plan__header{
+	  background: @brand-info;
+
+	  .titulo{
+		border-bottom: solid 1px darken(@brand-info, 5%);
+	  }
+	}
+  }
+
+  &.plan-gold{
+	.plan__header{
+	  background: @brand-warning;
+
+	  .titulo{
+		border-bottom: solid 1px darken(@brand-warning, 5%);
+	  }
+	}
+  }
 }
 
 
