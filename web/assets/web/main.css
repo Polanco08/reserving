@@ -76,26 +76,6 @@ h1 {
 .content-box.content-box--landing__title {
   color: #c64d2d;
 }
-.content-box.paralax {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-image: url("");
-  /*& when (@overlay = true) {
-	&:before{
-	  content: "";
-	  position: absolute;
-	  left: 0;right: 0;bottom: 0;top: 0;
-	  background: fade(@color,90%);
-	}
-  }*/
-}
-.parallax-xl {
-  padding: 60px 0;
-}
 .parallax {
   position: relative;
   background-attachment: fixed;
@@ -103,7 +83,7 @@ h1 {
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-image: url("img/landing-home-bg-1.jpg");
+  background-image: url("../img/langing_home_bg.jpg");
   /*& when (@overlay = true) {
 	&:before{
 	  content: "";
@@ -335,21 +315,6 @@ h1 {
 }
 .plan.plan-gold .plan__header .titulo {
   border-bottom: solid 1px #e08e0b;
-}
-.caracteristicas .overlay {
-  background: rgba(198, 77, 45, 0.85);
-  padding: 65px 0;
-  height: 100%;
-}
-.caracteristicas .icon {
-  font-size: 10em;
-  line-height: 0;
-  color: #2c3e50;
-  font-weight: normal;
-}
-.caracteristicas .titulo {
-  color: #ecf0f1;
-  font-weight: bold;
 }
 /*------------------------------------*\
 	PAGE LOGIN/REGISTER STYLE
