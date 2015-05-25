@@ -74,7 +74,7 @@
             <div class="plan-container">
                 <h2 class="text-center">Planes y precios</h2>
                 <hr/>
-                <div class="col-sm-4 col-sm-offset-1 plan plan-gratis">
+                <div class="col-sm-4 col-xs-12 col-sm-offset-1 plan plan-gratis">
                     <div class="plan-inner">
                         <div class="plan__header">
                             <h4 class="titulo">Plan Gratuito</h4>
@@ -91,7 +91,7 @@
                         <a class="plan__btnaction btn btn-custom" href="{{path("fos_user_registration_register")}}">Empieza con el plan gratuito</a>
                     </div>
                 </div>
-                <div class="col-sm-3 plan plan-premium">
+                <div class="col-sm-3 col-xs-12 plan plan-premium">
                     <div class="plan-inner">
                         <div class="plan__header">
                             <h4 class="titulo">Plan Premium</h4>
@@ -107,7 +107,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3 plan plan-gold">
+                <div class="col-sm-3 col-xs-12 plan plan-gold">
                     <div class="plan-inner">
                         <div class="plan__header">
                             <h4 class="titulo">Plan Gold</h4>
@@ -128,13 +128,39 @@
     </section>
     <!-- Final Bloque planesPrecios -->
 
-    <div id="servicios" class="content-box">
+    <section class="parallax caracteristicas">
+        <div class="overlay">
+            <div class="container">
+            <div class="col-sm-4 text-center">
+                <div class="innerbox-md">
+                    <div class="icon"><i class="fa fa-clock-o"></i></div>
+                    <h4 class="titulo">Ahorra tiempo programando tus citas en línea</h4>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="innerbox-md">
+                    <div class="icon"><i class="fa fa-bell"></i></div>
+                    <h4 class="titulo">Reduce las ausencias con recordatorios por correo electrónico</h4>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="innerbox-md">
+                    <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                    <h4 class="titulo">Tus clientes pueden reservar en línea fácilmente</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section id="servicios" class="content-box">
         <div class="container">
             <h2 class="text-center">Servicios</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta exercitationem facere inventore pariatur
                 qui! Accusamus adipisci aperiam atque ex mollitia necessitatibus quaerat recusandae similique ullam!
                 Aliquid distinctio est et voluptatem.</p>
         </div>
-    </div>
+    </section>
 
 {% endblock %}
