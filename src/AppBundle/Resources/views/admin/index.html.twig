@@ -64,7 +64,7 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 <img src="https://s3.amazonaws.com/quizzpot/users/2563/large/front-end-dan.png" alt=""/>
-                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                                {#{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }#}
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
