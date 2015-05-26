@@ -49,7 +49,7 @@ class ServicioController extends ApiRestController
 		$servicio->setDuracion($ServicioEditado->getDuracion());
 		$servicio->setPrecio($ServicioEditado->getPrecio());
 		$servicio->setHabilitadoParaReserva($ServicioEditado->getHabilitadoParaReserva());
-        $servicio->addEmpleado($ServicioEditado->getEmpleados());
+        //$servicio->addEmpleado($ServicioEditado->getEmpleados());
 
 		return $this->guarda($servicio);
 	}

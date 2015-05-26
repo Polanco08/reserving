@@ -4,23 +4,17 @@ api_usuario:
 
 api_cliente:
     type: rest
-    parent:    api_usuario
     resource: AppBundle\Controller\ClienteController
 
 
 api_servicio:
     type: rest
-    parent:    api_usuario
-    parent:    api_empleado
     resource: AppBundle\Controller\ServicioController
 
 api_empleado:
     type: rest
-    parent:    api_usuario
-    parent:    api_servicio
     resource: AppBundle\Controller\EmpleadoController
 
 api_cita:
     type: rest
-    parent:    api_usuario
     resource: AppBundle\Controller\CitaController
