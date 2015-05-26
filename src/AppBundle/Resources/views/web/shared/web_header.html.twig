@@ -31,26 +31,23 @@
                 </li>
             </ul>
             <ul class="login-menu nav navbar-nav {%if currentpage != 'home'%}login-menu-scroller{%endif%}">
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li class="login-menu__item login-menu__item--logout">
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            <i class="glyphicon glyphicon-log-out"></i> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="login-menu__item login-menu__item--login">
-                        <a href="{{ path('fos_user_security_login') }}">
-                            <i class="glyphicon glyphicon-log-in"></i> {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
+                <!--li class="login-menu__item login-menu__item--logout">
+                    usuario |
+                    <a href="">
+                        <i class="glyphicon glyphicon-log-out"></i> salir
+                    </a>
+                </li-->
+                <li class="login-menu__item login-menu__item--login">
+                    <a href="">
+                        <i class="glyphicon glyphicon-log-in"></i> entrar
+                    </a>
+                </li>
 
-                    <li class="login-menu__item login-menu__item--register">
-                        <a href="{{ path("fos_user_registration_register") }}">
-                            <i class="glyphicon glyphicon-user"></i> {{ 'layout.register'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
-                {% endif %}
+                <li class="login-menu__item login-menu__item--register">
+                    <a href="">
+                        <i class="glyphicon glyphicon-user"></i> registro
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -67,7 +64,7 @@
                     Gestiona tus Citas en línea.<br>
                     Utilizando nuestro <strong>programa de gestión</strong>
                 </h1>
-                <a class="btn btn-custom block-center" href="{{ path('fos_user_registration_register') }}">
+                <a class="btn btn-custom block-center" href="">
                     <strong>Registrate</strong> y empieza a usarlo. !Gratis¡
                 </a>
             </div>
