@@ -62,12 +62,6 @@ class Cita
      */
     private $servicio;
 
-    /**
-     * @var
-     * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="citas")
-     * @JoinColumn(name="usuario_id", referencedColumnName="id")
-     */
-    private $usuario;
 
 
     /**

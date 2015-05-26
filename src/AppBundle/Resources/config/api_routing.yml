@@ -1,7 +1,3 @@
-api_usuario:
-    type: rest
-    resource: AppBundle\Controller\UsuarioController
-
 api_cliente:
     type: rest
     resource: AppBundle\Controller\ClienteController

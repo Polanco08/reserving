@@ -73,13 +73,6 @@ class Servicio
 
     /**
      * @var
-     * @ORM\ManyToOne(targetEntity="Usuario")
-     * @Exclude
-     */
-    private $usuario;
-
-    /**
-     * @var
      * @ORM\OneToMany(targetEntity="Cita", mappedBy="servicio")
      * @Exclude
      */

@@ -71,9 +71,9 @@
                                 <li><a href=""><i class="glyphicon glyphicon-user"></i> Mi perfil</a></li>
                                 <li><a href=""><i class="glyphicon glyphicon-cog"></i> Configuraciones</a></li>
                                 <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">
+                                    <a href="">
                                         <i class="glyphicon glyphicon-log-out"></i>
-                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                        {#{ 'layout.logout'|trans({}, 'FOSUserBundle') }#}
                                     </a>
                                 </li>
                             </ul>
@@ -90,14 +90,12 @@
         <!-- Final .headerbar -->
 
         <ul class="hidden login-menu">
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li class="login-menu__item login-menu__item--logout">
-                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                    <a href="{{ path('fos_user_security_logout') }}">
-                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                </li>
-            {% endif %}
+            <li class="login-menu__item login-menu__item--logout">
+                usuario |
+                <a href="">
+                    salir
+                </a>
+            </li>
         </ul>
 
         <!-- Inicio .pageheader -->

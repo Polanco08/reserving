@@ -73,13 +73,6 @@ class Empleado
      */
     private $alertaCitas;
 
-    /**
-     * @var
-     * @ORM\ManyToOne(targetEntity="Usuario")
-     * @Exclude
-     */
-    private $usuario;
-
 
     /**
      * @var

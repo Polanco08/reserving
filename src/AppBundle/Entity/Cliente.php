@@ -98,14 +98,6 @@ class Cliente
     private $cPostal;
 
 
-    /**
-     * @var
-     * @ORM\ManyToOne(targetEntity="Usuario")
-     * @Exclude()
-     */
-    private $usuario;
-
-
 
     /**
      * @var
