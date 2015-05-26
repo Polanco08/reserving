@@ -17,7 +17,7 @@ reserving_web_routing:
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /doc/
     host: %api_domain%
 
 # ------------------------------------------------- #
