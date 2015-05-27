@@ -2,8 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Entity\User as BaseUser;
 use AppBundle\Entity;
 
 /**
@@ -67,7 +68,8 @@ class Usuario extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        $this->servicios = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->roles = array('ROLE_USER');
+        $this->servicios = new ArrayCollection();
     }
 
     /**
@@ -167,5 +169,38 @@ class Usuario extends BaseUser
     public function getEmpleados()
     {
         return $this->empleados;
+    }
+
+    /**
+     * Add citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     * @return Usuario
+     */
+    public function addCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas[] = $citas;
+
+        return $this;
+    }
+
+    /**
+     * Remove citas
+     *
+     * @param \AppBundle\Entity\Cita $citas
+     */
+    public function removeCita(\AppBundle\Entity\Cita $citas)
+    {
+        $this->citas->removeElement($citas);
+    }
+
+    /**
+     * Get citas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCitas()
+    {
+        return $this->citas;
     }
 }
