@@ -5,18 +5,20 @@ angular.module('Clientes')
 
     .controller('ClientesController',['$scope', '$stateParams', '$rootScope', '$state', 'ClienteResource',
         function($scope, $stateParams, $rootScope, $state, ClienteResource){
-            $rootScope.titulo       = 'Gestión de clientes';
-            $rootScope.descripcion  = 'Administra tus clientes.';
-            $scope.orderList        = 'name';
-            $scope.confirmaDelete   = false;
-            $scope.cliente = new ClienteResource();
-            $scope.clientes         = ClienteResource.query();
+            function init(){
+                $rootScope.titulo       = 'Gestión de clientes';
+                $rootScope.descripcion  = 'Administra tus clientes.';
+                $scope.orderList        = 'name';
+                $scope.confirmaDelete   = false;
+                $scope.cliente          = new ClienteResource();
+                $scope.clientes         = ClienteResource.query().$promise.then(function(data){
+                    $scope.clientes     = data;
+                });
 
-            if($stateParams.id) {
-                // buscar cliente por id
-            } else {
+            }
 
-            };
+
+            if($stateParams.id) {}
 
             $scope.nuevo = function(){
                 $rootScope.titulo = "Nuevo cliente";
@@ -54,8 +56,26 @@ angular.module('Clientes')
                 $state.go('clientes.list');
             };
 
-            $scope.detalle = function(){};
-        }]);
+            $scope.detalle = function(cliente){
+                $scope.cliente = cliente;
+            };
+
+            init();
+        }])
+
+
+    .controller('clientePerfilCtrl', function ($scope, $window) {
+        $scope.tabs = [
+            { title:'Dynamic Title 1', content:'Dynamic content 1' },
+            { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+        ];
+
+        $scope.alertMe = function() {
+            setTimeout(function() {
+                $window.alert('You\'ve selected the alert tab!');
+            });
+        };
+    });
 
 
 })();

@@ -10,11 +10,21 @@
     </div>
     <div class="col-sm-9">
         <div class="panel panel-default">
-            <div class="panel-heading"></div>
+
             <div class="panel-body">
-                <h1>[[cliente.nombre]]</h1>
+                <h1>[[cliente.nombre]] [[cliente.apellidos]]</h1>
+                <hr/>
+
+                <div class="bootstrap-tab" ng-controller="clientePerfilCtrl">
+                    <tabset justified="true">
+                        <tab heading="Datos personales">Datos personales</tab>
+                        <tab heading="Proximas citas">Proximas citas</tab>
+                        <tab heading="Configuración">configuración</tab>
+                    </tabset>
+                </div>
+
             </div>
-            <div class="panel-footer"></div>
+
         </div>
     </div>
 </div>

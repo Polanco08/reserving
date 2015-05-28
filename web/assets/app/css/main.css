@@ -503,3 +503,9 @@ h5 {
 .footer p {
   margin-bottom: 0;
 }
+.bootstrap-tab .tab-content {
+  border-bottom: solid 1px #f3f3f4;
+  border-left: solid 1px #f3f3f4;
+  border-right: solid 1px #f3f3f4;
+  padding: 20px;
+}
