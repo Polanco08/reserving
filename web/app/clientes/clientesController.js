@@ -49,10 +49,9 @@ angular.module('Clientes')
                                 $scope.clientes.splice(index, 1);
                             }
                         });
+                        $state.go('clientes.list');
                     }
                 });
-
-                $state.go('clientes.list');
             };
 
             $scope.detalle = function(cliente){
