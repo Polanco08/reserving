@@ -39,6 +39,7 @@
                        ng-click="delete(cliente)">
                         <i class="fa fa-trash"></i></a>
                     <a class="btn btn-info btn-xs"
+                       ui-sref="clientes.editar({id:cliente.id})"
                        tooltip-placement="top"
                        tooltip="Editar cliente" ng-click="editar(cliente)">
                         <i class="fa fa-edit"></i>

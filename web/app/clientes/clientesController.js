@@ -7,7 +7,6 @@ angular.module('Clientes')
         function($scope, $stateParams, $rootScope, $state, ClienteResource){
 
             function init(){
-                $scope.confirmaDelete   = false;
                 $scope.cliente          = new ClienteResource();
                 $scope.clientes         = ClienteResource.query().$promise.then(function(data){
                     $scope.clientes     = data;
@@ -21,8 +20,13 @@ angular.module('Clientes')
             };
 
             $scope.save = function() {
-                $scope.cliente.$save();
-                $scope.clientes.push($scope.cliente);
+                if($scope.cliente.id){
+                    //actualiza
+                    ClienteResource.update($scope.cliente);
+                } else {
+                    // guarda nuevo
+                    $scope.cliente.$save();
+                }
                 $state.go('clientes.list');
             };
 
@@ -57,11 +61,16 @@ angular.module('Clientes')
                 $scope.cliente = cliente;
             };
 
+            $scope.editar = function(cliente) {
+                $rootScope.titulo       = 'Editar cliente';
+                $rootScope.descripcion  = 'Cambia los datos y guardalos.';
+                console.log("Editando");
+                $scope.cliente = cliente;
+            }
 
 
             init();
         }])
-
 
     .controller('listadoClienteCtrl', ['$scope', '$rootScope', function($scope,$rootScope, $windows){
         $rootScope.titulo       = 'Gestión de clientes';

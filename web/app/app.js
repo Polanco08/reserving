@@ -7,14 +7,12 @@
             'ui.bootstrap',
             'ncy-angular-breadcrumb',
             'angular-loading-bar',
+            'xtForm',
 
             'Citas',
             'Empleados',
             'Clientes',
-            'Servicios',
-
-
-            'xtForm'
+            'Servicios'
     ])
         .value('_APIURL', 'http://api.reserving.local')
 
@@ -114,8 +112,16 @@
                             parent: 'clientes.list'
                         }
                     })
+                    .state('clientes.editar', {
+                        url: '/{id:[0-9]{1,4}}/editar',
+                        templateUrl: '/app/clientes/views/editar.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Editar Cliente ',
+                            parent: 'clientes.list'
+                        }
+                    })
                     .state('clientes.detalle', {
-                        url: '/{id:[0-9]{1,4}}/detalle',
+                        url: '/{clienteId:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/clientes/views/detalle.tpl.html',
                         ncyBreadcrumb: {
                             label: 'Cliente ',
