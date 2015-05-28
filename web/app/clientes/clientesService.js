@@ -2,6 +2,11 @@
     angular.module('Clientes', [])
 
         .factory('ClienteResource', ['$resource','_APIURL',function($resource, _APIURL){
-            return $resource(_APIURL + '/clientes/:clienteId');
+            return $resource(
+                _APIURL + '/clientes/:id', {id: '@id'}, {
+                update: {
+                    method: 'PUT'
+                }
+            });
         }])
 })();

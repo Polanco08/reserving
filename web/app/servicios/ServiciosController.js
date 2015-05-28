@@ -16,12 +16,10 @@ angular.module('Servicios')
         //-----------------------------------------------------
         if($stateParams.servicioId){
             $scope.Detalle = $scope.findById($scope.listadoServicios, $stateParams.servicioId);
-            console.log($stateParams.servicioId);
         }
 
         $scope.getDetalle = function(servicio){
             $scope.servicio = servicio;
-            console.log(servicio.nombre);
         }
 
 
@@ -35,21 +33,27 @@ angular.module('Servicios')
         }
 
 
-
-
-        // Nuevo servicio
-        //-----------------------------------------------------
+        // Guarda servicio Nuevo y editado
+        //-------------------------------------------------------------
         $scope.save = function(servicio){
             if(!servicio.id){
                 var s = new serviciosResource(servicio);
                 s.$save(function(){
                     $scope.listadoServicios.push(s);
                 });
-
                 $state.go('servicios.list');
+            } else {
+                $scope.servicio$.update(function(){
+                    console.log("guardado: ")
+                })
             }
         }
 
+
+        // Editar Servicio
+        $scope.editar = function(servicio){
+            $scope.servicio = servicio;
+        }
 
 
     }])

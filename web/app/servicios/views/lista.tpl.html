@@ -32,10 +32,12 @@
                             <td>[[servicio.duracion]] Min.</td>
                             <td>[[servicio.precio | currency : " €" ]] </td>
                             <td>
-                                <a class="btn btn-xs btn-success" ng-click="getDetalle(servicio)" ui-sref="servicios.detalle({servicioId:servicio.id})">
+                                <a class="btn btn-xs btn-success" ng-click="getDetalle(servicio)"
+                                   ui-sref="servicios.detalle({servicioId:servicio.id})">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a class="btn btn-xs btn-default" ng-click="save(servicio)" ui-sref="servicios.editar">
+                                <a class="btn btn-xs btn-default" ng-click="editar(servicio)"
+                                   ui-sref="servicios.editar({servicioId:servicio.id})">
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </td>

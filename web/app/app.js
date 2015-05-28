@@ -11,7 +11,10 @@
             'Citas',
             'Empleados',
             'Clientes',
-            'Servicios'
+            'Servicios',
+
+
+            'xtForm'
     ])
         .value('_APIURL', 'http://api.reserving.local')
 
@@ -112,7 +115,7 @@
                         }
                     })
                     .state('clientes.detalle', {
-                        url: '/{clienteId:[0-9]{1,4}}/detalle',
+                        url: '/{id:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/clientes/views/detalle.tpl.html',
                         ncyBreadcrumb: {
                             label: 'Cliente ',

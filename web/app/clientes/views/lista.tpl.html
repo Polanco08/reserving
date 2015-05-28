@@ -26,13 +26,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="cliente in ListaClientes | orderBy: orderList.type | filter:search">
+                        <tr ng-repeat="cliente in clientes | orderBy: orderList.type | filter:search">
                             <td>[[cliente.nombre]]</td>
                             <td>[[cliente.apellidos]]</td>
                             <td>[[cliente.email]]</td>
                             <td>[[cliente.tel]]</td>
-                            <td width="30">
-                                <a ng-click="detalle(cliente)" ui-sref="clientes.detalle({clienteId:[[cliente.id]] })">Detalles</a>
+                            <td>
+                                <a class="btn btn-default btn-xs" ng-click="detalle()" ui-sref="clientes.detalle({id:cliente.id})">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="btn btn-danger btn-xs" ng-click="delete(cliente)"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         </tbody>

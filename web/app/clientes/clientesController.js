@@ -1,12 +1,47 @@
 (function(){
-    angular.module('Clientes')
+    'use strict';
 
-        .controller('ClientesController',['$scope', '$stateParams', 'ClienteResource',
-            function($scope, $stateParams, ClienteResource){
-                $scope.clienteId    = $stateParams.clienteId;
-                $scope.titulo       = 'Gestión de clientes';
-                $scope.orderList    = 'name';
+angular.module('Clientes')
 
-                $scope.ListaClientes = ClienteResource.query();
-        }])
+    .controller('ClientesController',['$scope', '$stateParams', '$rootScope', '$state', 'ClienteResource',
+        function($scope, $stateParams, $rootScope, $state, ClienteResource){
+            $rootScope.titulo       = 'Gestión de clientes';
+            $rootScope.descripcion  = 'Administra tus clientes.';
+            $scope.orderList        = 'name';
+            $scope.confirmaDelete   = false;
+            $scope.cliente = new ClienteResource();
+            $scope.clientes         = ClienteResource.query();
+
+            if($stateParams.id) {
+                // buscar cliente por id
+            } else {
+
+            };
+
+            $scope.nuevo = function(){
+                $rootScope.titulo = "Nuevo cliente";
+                $scope.cliente = new ClienteResource();
+            };
+
+            $scope.save = function() {
+                $scope.cliente.$save();
+                $scope.clientes.push($scope.cliente);
+                $state.go('clientes.list');
+            };
+
+            $scope.delete = function(cliente){
+
+                ClienteResource.delete({id: cliente.id},function(data){
+                    var index = $scope.clientes.indexOf(cliente);
+                    if(index > -1) {
+                        $scope.clientes.splice(index, 1);
+                    }
+                });
+                $state.go('clientes.list');
+            };
+
+            $scope.detalle = function(){};
+        }]);
+
+
 })();

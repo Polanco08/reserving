@@ -6,5 +6,8 @@
         $("body").toggleClass("leftpanel-collapsed");
     });
 
+    // ToolTip XtForm
+    //-------------------------------------------
+    $(".tooltipForm").tooltip();
 
 })();

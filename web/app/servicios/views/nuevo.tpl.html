@@ -52,13 +52,14 @@
                             <div class="form-group">
                                 <label for="enableToReserved">
                                     <input type="checkbox" ng-model="servicio.habilitado_para_reserva" id="enableToReserved">
-                                    Los clientes pueden reservar este servicio - [[ habilitado_para_reserva ]]
+                                    Los clientes pueden reservar este servicio
                                 </label>
                             </div>
                         </div>
                     </div>
                     <input type="hidden" ng-model="servicio.usuario" value="{{ app.user.username }}"/>
                 </form>
+
                 <hr/>
                 <a ng-click="save(servicio)" class="btn btn-success">Guardar</a>
                 <a ui-sref="servicios.list" class="btn btn-default">Cancelar</a>
