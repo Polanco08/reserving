@@ -7,9 +7,6 @@ angular.module('Clientes')
         function($scope, $stateParams, $rootScope, $state, ClienteResource){
 
             function init(){
-                $rootScope.titulo       = 'Gestión de clientes';
-                $rootScope.descripcion  = 'Administra tus clientes.';
-                $scope.orderList        = 'name';
                 $scope.confirmaDelete   = false;
                 $scope.cliente          = new ClienteResource();
                 $scope.clientes         = ClienteResource.query().$promise.then(function(data){
@@ -19,6 +16,7 @@ angular.module('Clientes')
 
             $scope.nuevo = function(){
                 $rootScope.titulo = "Nuevo cliente";
+                $rootScope.descripcion  = 'Completa el formulario.';
                 $scope.cliente = new ClienteResource();
             };
 
@@ -54,24 +52,29 @@ angular.module('Clientes')
             };
 
             $scope.detalle = function(cliente){
+                $rootScope.titulo = "Detalle cliente";
+                $rootScope.descripcion  = 'Información de '+cliente.nombre;
                 $scope.cliente = cliente;
             };
+
+
 
             init();
         }])
 
 
-    .controller('clientePerfilCtrl', function ($scope, $window) {
-        $scope.tabs = [
-            { title:'Dynamic Title 1', content:'Dynamic content 1' },
-            { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
-        ];
+    .controller('listadoClienteCtrl', ['$scope', '$rootScope', function($scope,$rootScope, $windows){
+        $rootScope.titulo       = 'Gestión de clientes';
+        $rootScope.descripcion  = 'Administra tus clientes.';
+        $scope.orden            = 'nombre';
+        $scope.orderList = function(order){
+            $scope.orden = order;
+        }
+    }])
 
-        $scope.alertMe = function() {
-            setTimeout(function() {
-                $window.alert('You\'ve selected the alert tab!');
-            });
-        };
+
+    .controller('clientePerfilCtrl', function ($scope, $window) {
+
     });
 
 

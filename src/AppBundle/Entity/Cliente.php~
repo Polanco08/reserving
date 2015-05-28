@@ -42,14 +42,6 @@ class Cliente
     /**
      * @var
      *
-     * @ORM\Column(name="edad", type="integer", nullable=true)
-     */
-    private $edad;
-
-
-    /**
-     * @var
-     *
      * @ORM\Column(name="genero", type="string", nullable=true)
      */
     private $genero;
@@ -169,29 +161,6 @@ class Cliente
     public function getApellidos()
     {
         return $this->apellidos;
-    }
-
-    /**
-     * Set edad
-     *
-     * @param integer $edad
-     * @return Cliente
-     */
-    public function setEdad($edad)
-    {
-        $this->edad = $edad;
-
-        return $this;
-    }
-
-    /**
-     * Get edad
-     *
-     * @return integer 
-     */
-    public function getEdad()
-    {
-        return $this->edad;
     }
 
     /**

@@ -1,59 +1,53 @@
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <input type="search" ng-model="search" placeholder="Buscar Cliente" class="input-md form-control">
-            </div>
-            <div class="panel-body">
-                <a ng-click="nuevo()" class="btn btn-success btn-block" ui-sref="clientes.nuevo">Nuevo cliente</a>
-                <p>[[titulo]] <span class="label label-info">[[clientes.length]]</span> [[orderList]]</p>
-            </div>
-            <div class="panel-footer"></div>
-        </div>
+
+<div class="panel panel-default" ng-controller="listadoClienteCtrl">
+    <div class="panel-heading clearfix">
+        <h3 class="pull-left">Clientes <span class="label label-default">[[clientes.length]]</span></h3>
+        <a ui-sref="clientes.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right">Nuevo Cliente</a>
     </div>
-    <div class="col-sm-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <div ng-show="clientes.length == 0">no content</div>
-                    <table class="table table-striped" ng-show="clientes.length > 0">
-                        <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Email</th>
-                            <th>Teléfono</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="cliente in clientes | orderBy: orderList.type | filter:search">
-                            <td>[[cliente.nombre]]</td>
-                            <td>[[cliente.apellidos]]</td>
-                            <td>[[cliente.email]]</td>
-                            <td>[[cliente.tel]]</td>
-                            <td>
-                                <a class="btn btn-default btn-xs"
-                                   tooltip-placement="top" tooltip="Ver detalles"
-                                   ng-click="detalle(cliente)"
-                                   ui-sref="clientes.detalle({id:cliente.id})">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a class="btn btn-danger btn-xs"
-                                   tooltip-placement="top" tooltip="Eliminar cliente"
-                                   ng-click="delete(cliente)">
-                                    <i class="fa fa-trash"></i></a>
-                                <a class="btn btn-info btn-xs"
-                                   tooltip-placement="top"
-                                   tooltip="Editar cliente" ng-click="editar(cliente)">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+    <div class="panel-body">
+        <div ng-show="clientes.length == 0" class="no-content text-center">
+        <h2><i class="fa fa-smile-o"></i> Crea tu primer cliente, aún no tienes ninguno.</h2>
+        <a ng-click="nuevo()" class="btn btn-success btn-lg" ui-sref="clientes.nuevo">
+            <i class="fa fa-plus"></i> Nuevo cliente</a>
+    </div>
+        <div class="table-responsive" ng-show="clientes.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th class="order" ng-click="orderList('nombre')"><i class="fa fa-sort"></i> Nombre</th>
+                <th class="order" ng-click="orderList('apellidos')"><i class="fa fa-sort"></i> Apellidos</th>
+                <th class="order" ng-click="orderList('email')"><i class="fa fa-sort"></i> Email</th>
+                <th class="order" ng-click="orderList('tel')"><i class="fa fa-sort"></i> Teléfono</th>
+                <th class="width100">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cliente in clientes | orderBy: orden | filter:search">
+                <td>[[cliente.nombre]]</td>
+                <td>[[cliente.apellidos]]</td>
+                <td>[[cliente.email]]</td>
+                <td>[[cliente.tel]]</td>
+                <td>
+                    <a class="btn btn-default btn-xs"
+                       tooltip-placement="top" tooltip="Ver detalles"
+                       ng-click="detalle(cliente)"
+                       ui-sref="clientes.detalle({id:cliente.id})">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    <a class="btn btn-danger btn-xs"
+                       tooltip-placement="top" tooltip="Eliminar cliente"
+                       ng-click="delete(cliente)">
+                        <i class="fa fa-trash"></i></a>
+                    <a class="btn btn-info btn-xs"
+                       tooltip-placement="top"
+                       tooltip="Editar cliente" ng-click="editar(cliente)">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
 </div>
+

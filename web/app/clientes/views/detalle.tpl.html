@@ -1,32 +1,17 @@
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="" class="btn btn-default btn-sm"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a>
-            </div>
-            <div class="panel-body">
-                opciones
-            </div>
-            <div class="panel-footer"></div>
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <div class="panel-heading clearfix">
+            <h2 class="pull-left margincero">[[cliente.nombre]] [[cliente.apellidos]]</h2>
+            <a class="btn btn-success btn-xs pull-right" ui-sref="clientes.list"><i class="fa fa-arrow-circle-o-left"></i> Ir a la lsita</a>
+        </div>
+        <div class="bootstrap-tab" ng-controller="clientePerfilCtrl">
+            <tabset justified="true">
+                <tab heading="Datos personales">Datos personales</tab>
+                <tab heading="Proximas citas">Proximas citas</tab>
+                <tab heading="Configuración">configuración</tab>
+            </tabset>
         </div>
     </div>
-    <div class="col-sm-9">
-        <div class="panel panel-default">
 
-            <div class="panel-body">
-                <h1>[[cliente.nombre]] [[cliente.apellidos]]</h1>
-                <hr/>
-
-                <div class="bootstrap-tab" ng-controller="clientePerfilCtrl">
-                    <tabset justified="true">
-                        <tab heading="Datos personales">Datos personales</tab>
-                        <tab heading="Proximas citas">Proximas citas</tab>
-                        <tab heading="Configuración">configuración</tab>
-                    </tabset>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 </div>

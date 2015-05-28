@@ -276,4 +276,37 @@ class Empleado
     {
         return $this->citas;
     }
+
+    /**
+     * Add servicios
+     *
+     * @param \AppBundle\Entity\Servicio $servicios
+     * @return Empleado
+     */
+    public function addServicio(\AppBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios[] = $servicios;
+
+        return $this;
+    }
+
+    /**
+     * Remove servicios
+     *
+     * @param \AppBundle\Entity\Servicio $servicios
+     */
+    public function removeServicio(\AppBundle\Entity\Servicio $servicios)
+    {
+        $this->servicios->removeElement($servicios);
+    }
+
+    /**
+     * Get servicios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getServicios()
+    {
+        return $this->servicios;
+    }
 }

@@ -187,7 +187,7 @@ class Cliente
     /**
      * Get edad
      *
-     * @return integer 
+     * @return integer
      */
     public function getEdad()
     {
