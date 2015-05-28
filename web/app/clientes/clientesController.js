@@ -30,13 +30,27 @@ angular.module('Clientes')
             };
 
             $scope.delete = function(cliente){
+                swal({
+                    title: "¿Seguro?",
+                    text: "Vas a eliminar el cliente id: "+cliente.id+", se perderán sus datos.",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d62c1a",
+                    confirmButtonText: "Sí, Eliminalo!",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm) {
+                        swal("Eliminado!", "El cliente id: "+cliente.id+" ha sido eliminado., ", "success");
 
-                ClienteResource.delete({id: cliente.id},function(data){
-                    var index = $scope.clientes.indexOf(cliente);
-                    if(index > -1) {
-                        $scope.clientes.splice(index, 1);
+                        ClienteResource.delete({id: cliente.id},function(data){
+                            var index = $scope.clientes.indexOf(cliente);
+                            if(index > -1) {
+                                $scope.clientes.splice(index, 1);
+                            }
+                        });
                     }
                 });
+
                 $state.go('clientes.list');
             };
 
