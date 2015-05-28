@@ -6,7 +6,7 @@
             </div>
             <div class="panel-body">
                 <a ng-click="nuevo()" class="btn btn-success btn-block" ui-sref="clientes.nuevo">Nuevo cliente</a>
-                <p>[[titulo]] <span class="label label-info">[[ListaClientes.length]]</span> [[orderList]]</p>
+                <p>[[titulo]] <span class="label label-info">[[clientes.length]]</span> [[orderList]]</p>
             </div>
             <div class="panel-footer"></div>
         </div>
@@ -15,7 +15,8 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <div ng-show="clientes.length == 0">no content</div>
+                    <table class="table table-striped" ng-show="clientes.length > 0">
                         <thead>
                         <tr>
                             <th>Nombre</th>
@@ -32,10 +33,21 @@
                             <td>[[cliente.email]]</td>
                             <td>[[cliente.tel]]</td>
                             <td>
-                                <a class="btn btn-default btn-xs" ng-click="detalle(cliente)" ui-sref="clientes.detalle({id:cliente.id})">
+                                <a class="btn btn-default btn-xs"
+                                   tooltip-placement="top" tooltip="Ver detalles"
+                                   ng-click="detalle(cliente)"
+                                   ui-sref="clientes.detalle({id:cliente.id})">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a class="btn btn-danger btn-xs" ng-click="delete(cliente)"><i class="fa fa-trash"></i></a>
+                                <a class="btn btn-danger btn-xs"
+                                   tooltip-placement="top" tooltip="Eliminar cliente"
+                                   ng-click="delete(cliente)">
+                                    <i class="fa fa-trash"></i></a>
+                                <a class="btn btn-info btn-xs"
+                                   tooltip-placement="top"
+                                   tooltip="Editar cliente" ng-click="editar(cliente)">
+                                    <i class="fa fa-edit"></i>
+                                </a>
                             </td>
                         </tr>
                         </tbody>

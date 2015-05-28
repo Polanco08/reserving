@@ -5,6 +5,7 @@ angular.module('Clientes')
 
     .controller('ClientesController',['$scope', '$stateParams', '$rootScope', '$state', 'ClienteResource',
         function($scope, $stateParams, $rootScope, $state, ClienteResource){
+
             function init(){
                 $rootScope.titulo       = 'Gestión de clientes';
                 $rootScope.descripcion  = 'Administra tus clientes.';
@@ -14,11 +15,7 @@ angular.module('Clientes')
                 $scope.clientes         = ClienteResource.query().$promise.then(function(data){
                     $scope.clientes     = data;
                 });
-
             }
-
-
-            if($stateParams.id) {}
 
             $scope.nuevo = function(){
                 $rootScope.titulo = "Nuevo cliente";
