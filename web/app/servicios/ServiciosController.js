@@ -3,14 +3,11 @@
 angular.module('Servicios')
     .controller('ServiciosController',["$scope","$rootScope", "$stateParams", "$state", "serviciosResource", "EmpleadoResource",
     function($scope, $rootScope, $stateParams,$state, serviciosResource, EmpleadoResource){
+        $scope.habilitado_para_reserva = false;
+        $scope.duracion =['10','15','30','45','60','75','90'];
+        $scope.servicio = new serviciosResource();
 
         function init(){
-            $scope.duracion =['10','15','30','45','60','75','90'];
-            $scope.reverse = false;
-            $scope.habilitado_para_reserva = false;
-            $rootScope.titulo = "Gestión de servicio";
-            $rootScope.descripcion  = 'Gestiona tus servicios desde esta página';
-            $scope.servicio = new serviciosResource();
             $scope.empleados = EmpleadoResource.query();
             $scope.servicios = serviciosResource.query().$promise.then(function(data){
                 $scope.servicios = data;
@@ -65,4 +62,10 @@ angular.module('Servicios')
         };
 
         init();
+    }])
+
+    .controller('listadoServicioCtrl',['$scope', '$rootScope', function($scope, $rootScope){
+        $rootScope.titulo = "Gestión de servicio";
+        $rootScope.descripcion  = 'Gestiona tus servicios desde esta página';
+        $scope.reverse = false;
     }])

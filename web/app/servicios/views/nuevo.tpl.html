@@ -8,7 +8,7 @@
                 <div ng-include src="'servicios/views/_servicio-form.tpl.html'"></div>
             </div>
             <div class="panel-footer">
-                <a ng-click="save(servicio)" class="btn btn-success"><i class="fa fa-save"></i> Guardar</a>
+                <a ng-click="save(servicio); init()" class="btn btn-success"><i class="fa fa-save"></i> Guardar</a>
                 <a ui-sref="servicios.list" class="btn btn-default"><i class="fa fa-ban"></i> Cancelar</a>
             </div>
         </div>
