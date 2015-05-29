@@ -1,59 +1,74 @@
 'use strict';
 
 angular.module('Servicios')
-    .controller('ServiciosController',["$scope", "$stateParams", "$state", "serviciosResource", "EmpleadoResource",
-    function($scope, $stateParams,$state, serviciosResource, EmpleadoResource){
+    .controller('ServiciosController',["$scope","$rootScope", "$stateParams", "$state", "serviciosResource", "EmpleadoResource",
+    function($scope, $rootScope, $stateParams,$state, serviciosResource, EmpleadoResource){
 
-        // Formulario nuevo servicio
-        $scope.duracion =['10','15','30','45','60','75','90'];
-        $scope.habilitado_para_reserva = false;
-        $scope.empleados = EmpleadoResource.query();
-        $scope.listadoServicios = serviciosResource.query();
-
-
-
-        // Página detalle servicio
-        //-----------------------------------------------------
-        if($stateParams.servicioId){
-            $scope.Detalle = $scope.findById($scope.listadoServicios, $stateParams.servicioId);
+        function init(){
+            $scope.duracion =['10','15','30','45','60','75','90'];
+            $scope.habilitado_para_reserva = false;
+            $rootScope.titulo = "Gestión de servicio";
+            $rootScope.descripcion  = 'Gestiona tus servicios desde esta página';
+            $scope.servicio = new serviciosResource();
+            $scope.empleados = EmpleadoResource.query();
+            $scope.servicios = serviciosResource.query().$promise.then(function(data){
+                $scope.servicios = data;
+            });
         }
 
-        $scope.getDetalle = function(servicio){
+
+        $scope.detalle = function(servicio){
             $scope.servicio = servicio;
+            $rootScope.titulo = "Detalle servicio";
+            $rootScope.descripcion  = 'Información sobre '+servicio.nombre;
         }
 
+        $scope.nuevo = function(){
+            $scope.cliente = new serviciosResource();
+            $rootScope.titulo = "Nuevo servicio";
+            $rootScope.descripcion  = 'Completa el formulario.';
+        };
 
-        $scope.findById = function findById(a, id) {
-            for (var i = 0; i < a.length; i++) {
-                if (a[i].id === parseInt(id)) {
-                    return a[i];
-                }
-            }
-            return {};
-        }
-
-
-        // Guarda servicio Nuevo y editado
-        //-------------------------------------------------------------
         $scope.save = function(servicio){
-            if(!servicio.id){
-                var s = new serviciosResource(servicio);
-                s.$save(function(){
-                    $scope.listadoServicios.push(s);
-                });
-                $state.go('servicios.list');
+            if(servicio.id){
+                serviciosResource.update($scope.servicio);
             } else {
-                $scope.servicio$.update(function(){
-                    console.log("guardado: ")
-                })
+                $scope.servicio.$save(function(){
+                    $scope.servicios.push($scope.servicio);
+                });
             }
+            $state.go('servicios.list');
         }
 
-
-        // Editar Servicio
         $scope.editar = function(servicio){
+            $rootScope.titulo       = 'Editar servicio';
+            $rootScope.descripcion  = 'Cambia los datos y guardalos.';
             $scope.servicio = servicio;
         }
 
+        $scope.delete = function(servicio){
+            swal({
+                title: "¿Seguro?",
+                text: "Vas a eliminar el servicio id: "+servicio.id+", se perderán sus datos.",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d62c1a",
+                confirmButtonText: "Sí, Eliminalo!",
+                closeOnConfirm: false
+            },function(isConfirm){
+                if(isConfirm) {
+                    swal("Eliminado!", "El servicio id: "+servicio.id+" ha sido eliminado., ", "success");
 
+                    serviciosResource.delete({id: servicio.id},function(data){
+                        var index = $scope.servicios.indexOf(servicio);
+                        if(index > -1) {
+                            $scope.servicios.splice(index, 1);
+                        }
+                    });
+                    $state.go('servicios.list');
+                }
+            });
+        };
+
+        init();
     }])

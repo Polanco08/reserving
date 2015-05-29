@@ -1,3 +1,21 @@
 <div ng-controller="ServiciosController">
-    <div ui-view></div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="search" ng-model="search" placeholder="Buscar Cliente" class="input-md form-control">
+                </div>
+                <div class="panel-body">
+                    <p>[[titulo]] <span class="label label-info"> [[servicios.length]] </span> [[orderList]]</p>
+                    <a ng-click="nuevo()" class="btn btn-success btn-block" ui-sref="servicios.nuevo">Nuevo Servicio</a>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+
+            <div ui-view></div>
+
+        </div>
+    </div>
 </div>

@@ -26,6 +26,7 @@ angular.module('Clientes')
                 } else {
                     // guarda nuevo
                     $scope.cliente.$save();
+                    $scope.clientes.push($scope.cliente);
                 }
                 $state.go('clientes.list');
             };
@@ -63,10 +64,8 @@ angular.module('Clientes')
             $scope.editar = function(cliente) {
                 $rootScope.titulo       = 'Editar cliente';
                 $rootScope.descripcion  = 'Cambia los datos y guardalos.';
-                console.log("Editando");
                 $scope.cliente = cliente;
             }
-
 
             init();
         }])
@@ -79,7 +78,6 @@ angular.module('Clientes')
             $scope.orden = order;
         }
     }])
-
 
     .controller('clientePerfilCtrl', function ($scope, $window) {
 

@@ -2,7 +2,7 @@
 <div class="panel panel-default" ng-controller="listadoClienteCtrl">
     <div class="panel-heading clearfix">
         <h3 class="pull-left">Clientes <span class="label label-default">[[clientes.length]]</span></h3>
-        <a ui-sref="clientes.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right">Nuevo Cliente</a>
+        <a ui-sref="clientes.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right"><i class="fa fa-plus"></i> Nuevo Cliente</a>
     </div>
     <div class="panel-body">
         <div ng-show="clientes.length == 0" class="no-content text-center">

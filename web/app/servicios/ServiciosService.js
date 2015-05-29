@@ -7,7 +7,7 @@
         .value('_APIURL', 'http://api.reserving.local')
 
         .factory('serviciosResource', ['$resource', '_APIURL', function($resource, _APIURL){
-            return $resource(_APIURL+'/servicios/:servicioId',{servicioId:'@id'},
+            return $resource(_APIURL+'/servicios/:id',{id:'@id'},
                 {update : {method:'PUT'}}
             );
         }])

@@ -1,43 +1,41 @@
-<div class="row">
-    <div class="col-sm-3">
+
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">Opciones de servicio</div>
+            <div class="panel-heading clearfix">
+                <h3 class="pull-left">Servicios <span class="label label-default">[[servicios.length]]</span></h3>
+                <a ui-sref="servicios.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right">
+                    <i class="fa fa-plus"></i> Nuevo Servicio
+                </a>
             </div>
-            <div class="panel-body">
-                <p>[[titulo]] <span class="label label-info"> [[listadoServicios.length]] </span> [[orderList]]</p>
-                <a ng-click="nuevoServicio()" class="btn btn-success btn-block" ui-sref="servicios.nuevo">Nuevo Servicio</a>
-            </div>
-            <div class="panel-footer"></div>
-        </div>
-    </div>
-    <div class="col-sm-9">
-        <div class="panel panel-default">
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Nombre</th>
+                            <th class="order" ng-click="orderList('nombre')"><i class="fa fa-sort"></i> Nombre</th>
                             <th>Descripción</th>
-                            <th>Duración</th>
-                            <th>Precio</th>
-                            <th>Actions</th>
+                            <th class="order" ng-click="orderList('duracion')"><i class="fa fa-sort"></i> Duración</th>
+                            <th class="order" ng-click="orderList('precio')"><i class="fa fa-sort"></i> Precio</th>
+                            <th class="width100">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="servicio in listadoServicios | orderBy: orderList.type | filter:search">
+                        <tr ng-repeat="servicio in servicios | orderBy: orderList.type | filter:search">
                             <td>[[servicio.nombre]]</td>
                             <td>[[servicio.descripcion]]</td>
                             <td>[[servicio.duracion]] Min.</td>
                             <td>[[servicio.precio | currency : " €" ]] </td>
                             <td>
-                                <a class="btn btn-xs btn-success" ng-click="getDetalle(servicio)"
-                                   ui-sref="servicios.detalle({servicioId:servicio.id})">
+                                <a class="btn btn-xs btn-success" ng-click="detalle(servicio)" tooltip-placement="top"
+                                   tooltip="detalles [[servicio.nombre]]"
+                                   ui-sref="servicios.detalle({id:servicio.id})">
                                     <i class="fa fa-eye"></i>
                                 </a>
+                                <a class="btn btn-danger btn-xs" tooltip-placement="top" tooltip="Eliminar servicio"
+                                   ng-click="delete(servicio)">
+                                    <i class="fa fa-trash"></i>
+                                </a>
                                 <a class="btn btn-xs btn-default" ng-click="editar(servicio)"
-                                   ui-sref="servicios.editar({servicioId:servicio.id})">
+                                   ui-sref="servicios.editar({id:servicio.id})">
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </td>
@@ -47,5 +45,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>

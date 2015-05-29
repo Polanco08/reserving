@@ -1,8 +1,12 @@
 <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <h2 class="pull-left margincero"><i class="fa fa-plus"></i> Nuevo cliente</h2>
+        <a class="btn btn-success btn-xs pull-right" ui-sref="clientes.list"><i class="fa fa-arrow-circle-o-left"></i> Ir a la lista</a>
+    </div>
     <div class="panel-body">
         <div ng-include src="'clientes/views/_cliente-form.tpl.html'"></div>
-        <hr/>
-
+    </div>
+    <div class="panel-footer">
         <a ng-click="save()" class="btn btn-success"><i class="fa fa-save"></i> Guardar</a>
         <a ui-sref="clientes.list" class="btn btn-default"><i class="fa fa-ban"></i> Cancelar</a>
     </div>

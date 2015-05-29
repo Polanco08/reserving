@@ -1,4 +1,8 @@
 <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <h3 class="pull-left">Editar cliente <span class="label label-default">[[cliente.nombre]] [[cliente.apellidos]]</span></h3>
+        <a ui-sref="clientes.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right"><i class="fa fa-plus"></i> Nuevo Cliente</a>
+    </div>
     <div class="panel-body">
         <div ng-include src="'clientes/views/_cliente-form.tpl.html'"></div>
     </div>
