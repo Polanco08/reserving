@@ -16,13 +16,6 @@ angular.module('Servicios')
             });
         }
 
-
-        $scope.detalle = function(servicio){
-            $scope.servicio = servicio;
-            $rootScope.titulo = "Detalle servicio";
-            $rootScope.descripcion  = 'Información sobre '+servicio.nombre;
-        }
-
         $scope.nuevo = function(){
             $scope.cliente = new serviciosResource();
             $rootScope.titulo = "Nuevo servicio";

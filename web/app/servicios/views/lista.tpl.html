@@ -25,11 +25,6 @@
                             <td>[[servicio.duracion]] Min.</td>
                             <td>[[servicio.precio | currency : " €" ]] </td>
                             <td>
-                                <a class="btn btn-xs btn-success" ng-click="detalle(servicio)" tooltip-placement="top"
-                                   tooltip="detalles [[servicio.nombre]]"
-                                   ui-sref="servicios.detalle({id:servicio.id})">
-                                    <i class="fa fa-eye"></i>
-                                </a>
                                 <a class="btn btn-danger btn-xs" tooltip-placement="top" tooltip="Eliminar servicio"
                                    ng-click="delete(servicio)">
                                     <i class="fa fa-trash"></i>
