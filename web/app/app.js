@@ -78,8 +78,16 @@
                             parent: 'empleados.list'
                         }
                     })
+                    .state('empleados.editar', {
+                        url: '/{id:[0-9]{1,4}}/editar',
+                        templateUrl: '/app/empleados/views/editar.tpl.html',
+                        ncyBreadcrumb: {
+                            label: 'Detalle Empleado ',
+                            parent: 'empleados.list'
+                        }
+                    })
                     .state('empleados.detalle', {
-                        url: '/{empleadoId:[0-9]{1,4}}/detalle',
+                        url: '/{id:[0-9]{1,4}}/detalle',
                         templateUrl: '/app/empleados/views/detalle.tpl.html',
                         ncyBreadcrumb: {
                             label: 'Detalle Empleado ',

@@ -1,23 +1,47 @@
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">[[ titulo ]]</div>
-            </div>
-            <div class="panel-body">
-                <a class="btn btn-block btn-success" ui-sref="empleados.nuevo">Nuevo empleado</a>
-                <p><strong>Empleado Activo: </strong> [[ empleado.name ]]</p>
-            </div>
-            <div class="panel-footer"></div>
-        </div>
+<div class="panel panel-default" ng-controller="listadoEmpleadosCtrl">
+    <div class="panel-heading clearfix">
+        <h3 class="pull-left">Empleados <span class="label label-default">[[empleados.length]]</span></h3>
+        <a ui-sref="empleados.nuevo" ng-click="nuevo()" class="btn btn-success btn-xs pull-right">
+            <i class="fa fa-plus"></i> Nuevo Cliente
+        </a>
     </div>
-    <div class="col-sm-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <ul>
-                    <li ng-repeat="emp in empleados">[[ emp.name ]] [[emp.lastName ]]</li>
-                </ul>
-            </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="order" ng-click="orden='nombre'; reverse=!reverse"><i class="fa fa-sort"></i> Nombre</th>
+                    <th>Apellidos</th>
+                    <th class="order" ng-click="orden = 'email'; reverse=!reverse">
+                        <i class="fa fa-sort"></i> Email</th>
+                    <th class="order" ng-click="orden = 'telefono'; reverse=!reverse">
+                        <i class="fa fa-sort"></i> Teléfono</th>
+                    <th class="width100">
+                        <button ng-show="orden" ng-click=" orden=''; reverse=false " type="button" class="btn btn-default btn-xs">
+                            <i class="fa fa-close"></i> Borra orden
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="empleado in empleados | orderBy: orden:reverse | filter:search">
+                    <td>[[empleado.nombre]]</td>
+                    <td>[[empleado.apellidos]]</td>
+                    <td>[[empleado.email]]</td>
+                    <td>[[empleado.telefono]] </td>
+                    <td class="text-right">
+                        <a class="btn btn-danger btn-xs" tooltip-placement="top" tooltip="Eliminar servicio"
+                           ng-click="delete(empleado)">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-xs btn-default" ng-click="editar(empleado)"
+                           ui-sref="empleados.editar({id:empleado.id})">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

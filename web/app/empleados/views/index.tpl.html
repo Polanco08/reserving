@@ -1,3 +1,24 @@
 <div ng-controller="EmpleadosController">
-    <div ui-view></div>
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="search" ng-model="search" placeholder="Buscar Cliente" class="input-md form-control">
+
+                </div>
+                <div class="panel-body">
+                    <a ng-click="nuevo()" class="btn btn-success btn-block" ui-sref="clientes.nuevo">Nuevo cliente</a>
+                </div>
+                <div class="panel-footer text-center">
+                    Has creado <strong>[[clientes.length]]</strong> de 100 permitidos
+                    <progressbar class="progress-striped active" max="100" value="[[clientes.length]] " type="info">
+                        <i>[[clientes.length]] / 100</i></progressbar>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div ui-view></div>
+        </div>
+    </div>
 </div>

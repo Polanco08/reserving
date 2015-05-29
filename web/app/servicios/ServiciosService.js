@@ -15,6 +15,8 @@
         // Factory Empleados - Gestión de empleados
         //----------------------------------------------------------------------
         .factory('EmpleadoResource', ['$resource','_APIURL', function($resource, _APIURL){
-            return $resource(_APIURL + '/empleados/:empleadoId');
+            return $resource(_APIURL+'/empleados/:id',{id:'@id'},
+                {update : {method:'PUT'}}
+            );
         }])
 })();
