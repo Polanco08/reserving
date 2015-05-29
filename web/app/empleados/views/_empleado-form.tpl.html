@@ -22,10 +22,13 @@
         </div>
         <div class="col-sm-6">
             <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="text" id="email" ng-model="empleado.email" class="form-control"/>
+
+            </div>
+            <div class="form-group">
                 <label for="servicios">Servicios asignados</label>
-                <select id="serivicioasignado">
-                    <option value="">---</option>
-                </select>
+                <select class="form-control" name="" id=""></select>
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripcion</label>
@@ -34,5 +37,5 @@
             </div>
         </div>
     </div>
-    <input type="hidden" ng-model="servicio.usuario" value="{{ app.user.username }}"/>
+
 </form>

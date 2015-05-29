@@ -5,7 +5,6 @@ angular.module('Servicios')
     function($scope, $rootScope, $stateParams,$state, serviciosResource, EmpleadoResource){
         $scope.habilitado_para_reserva = false;
         $scope.duracion =['10','15','30','45','60','75','90'];
-        $scope.servicio = new serviciosResource();
 
         function init(){
             $scope.empleados = EmpleadoResource.query();

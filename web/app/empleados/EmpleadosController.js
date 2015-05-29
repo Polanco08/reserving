@@ -2,10 +2,19 @@
 
 angular.module('Empleados',[])
 
-    .controller('EmpleadosController', ['$scope', '$rootScope', 'EmpleadoResource', function($scope, $rootScope, EmpleadoResource){
-        $scope.empleado = new EmpleadoResource();
+    .controller('EmpleadosController', ['$scope', '$rootScope','$state', 'EmpleadoResource',
+        function($scope, $rootScope, $state, EmpleadoResource){
+        $scope.example9model = [];
+        $scope.example9data = [
+            {id: 1, label: "David"},
+            {id: 2, label: "Jhon"},
+            {id: 3, label: "Danny"}
+        ];
+        $scope.example9settings = {enableSearch: true};
+
 
         function init(){
+            $scope.empleado = new EmpleadoResource();
             $scope.empleados    = EmpleadoResource.query().$promise.then(function(data){
                 $scope.empleados = data;
             });

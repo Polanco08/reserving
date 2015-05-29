@@ -7,7 +7,12 @@
     </div>
     <div class="panel-body">
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <div ng-show="empleados.length == 0" class="no-content text-center">
+                <h2><i class="fa fa-smile-o"></i> Crea tu primer empleado, aún no tienes ninguno.</h2>
+                <a ng-click="nuevo()" class="btn btn-success btn-lg" ui-sref="empleados.nuevo">
+                    <i class="fa fa-plus"></i> Nuevo cliente</a>
+            </div>
+            <table ng-show="empleados.length > 0" class="table table-striped table-hover">
                 <thead>
                 <tr>
                     <th class="order" ng-click="orden='nombre'; reverse=!reverse"><i class="fa fa-sort"></i> Nombre</th>
