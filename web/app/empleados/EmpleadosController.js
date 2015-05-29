@@ -41,7 +41,29 @@ angular.module('Empleados',[])
             $state.go('empleados.list');
         }
 
-        $scope.delete = function(empleado){}
+            $scope.delete = function(empleado){
+                swal({
+                    title: "¿Seguro?",
+                    text: "Vas a eliminar el servicio id: "+empleado.id+", se perderán sus datos.",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d62c1a",
+                    confirmButtonText: "Sí, Eliminalo!",
+                    closeOnConfirm: false
+                },function(isConfirm){
+                    if(isConfirm) {
+                        swal("Eliminado!", "El servicio id: "+empleado.id+" ha sido eliminado., ", "success");
+
+                        EmpleadoResource.delete({id: empleado.id},function(data){
+                            var index = $scope.empleados.indexOf(empleado);
+                            if(index > -1) {
+                                $scope.empleados.splice(index, 1);
+                            }
+                        });
+                        $state.go('empleados.list');
+                    }
+                });
+            };
 
         init();
     }])
