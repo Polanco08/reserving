@@ -22,7 +22,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="cliente in clientes | orderBy: orden | filter:search">
+            <tr ng-repeat="cliente in clientes | orderBy:orden:reverse | filter:search">
                 <td>[[cliente.nombre]]</td>
                 <td>[[cliente.apellidos]]</td>
                 <td>[[cliente.email]]</td>

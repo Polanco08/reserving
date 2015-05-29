@@ -6,6 +6,7 @@ angular.module('Servicios')
 
         function init(){
             $scope.duracion =['10','15','30','45','60','75','90'];
+            $scope.reverse = false;
             $scope.habilitado_para_reserva = false;
             $rootScope.titulo = "Gestión de servicio";
             $rootScope.descripcion  = 'Gestiona tus servicios desde esta página';

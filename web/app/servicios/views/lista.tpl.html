@@ -7,24 +7,31 @@
                 </a>
             </div>
             <div class="panel-body">
+
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <thead>
                         <tr>
-                            <th class="order" ng-click="orderList('nombre')"><i class="fa fa-sort"></i> Nombre</th>
+                            <th class="order" ng-click="orden='nombre'; reverse=!reverse"><i class="fa fa-sort"></i> Nombre</th>
                             <th>Descripción</th>
-                            <th class="order" ng-click="orderList('duracion')"><i class="fa fa-sort"></i> Duración</th>
-                            <th class="order" ng-click="orderList('precio')"><i class="fa fa-sort"></i> Precio</th>
-                            <th class="width100">Actions</th>
+                            <th class="order text-center" ng-click="orden = 'duracion'; reverse=!reverse">
+                                <i class="fa fa-sort"></i> Duración</th>
+                            <th class="order text-center" ng-click="orden = 'precio'; reverse=!reverse">
+                                <i class="fa fa-sort"></i> Precio</th>
+                            <th class="width100">
+                                <button ng-show="orden" ng-click=" orden=''; reverse=false " type="button" class="btn btn-default btn-xs">
+                                    <i class="fa fa-close"></i> Borra orden
+                                </button>
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="servicio in servicios | orderBy: orderList.type | filter:search">
+                        <tr ng-repeat="servicio in servicios | orderBy: orden:reverse | filter:search">
                             <td>[[servicio.nombre]]</td>
                             <td>[[servicio.descripcion]]</td>
-                            <td>[[servicio.duracion]] Min.</td>
-                            <td>[[servicio.precio | currency : " €" ]] </td>
-                            <td>
+                            <td class="text-center">[[servicio.duracion]] Min.</td>
+                            <td class="text-center">[[servicio.precio | currency : " €" ]] </td>
+                            <td class="text-right">
                                 <a class="btn btn-danger btn-xs" tooltip-placement="top" tooltip="Eliminar servicio"
                                    ng-click="delete(servicio)">
                                     <i class="fa fa-trash"></i>
