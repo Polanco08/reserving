@@ -8,6 +8,7 @@
             'ncy-angular-breadcrumb',
             'angular-loading-bar',
             'xtForm',
+            'ui.calendar',
 
             'Citas',
             'Empleados',

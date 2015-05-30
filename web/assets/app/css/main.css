@@ -493,6 +493,9 @@ h5 {
   padding: 20px;
   position: relative;
 }
+#appHome .footer {
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.09);
+}
 .footer {
   padding: 10px;
   background-color: #fff;
@@ -502,6 +505,7 @@ h5 {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
 }
 .footer p {
   margin-bottom: 0;
