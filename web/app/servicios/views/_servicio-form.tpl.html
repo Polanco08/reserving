@@ -32,7 +32,8 @@
                     <div class="col-sm-4">
                         <label for="empleado">Empleado que lo orealiza</label>
                         <select ng-model="servicio.empleado" class="form-control" id="empleado">
-                            <option ng-model="servicio.empleado" ng-repeat="empleado in empleados" value="[[empleado.id]]">[[empleado.nombre]]</option>
+                            <option ng-model="servicio.empleado" ng-repeat="empleado in empleados" value="[[empleado.id]]">
+                                [[empleado.nombre]]</option>
                         </select>
                     </div>
                 </div>

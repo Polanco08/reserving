@@ -18,3 +18,11 @@ api_empleado:
 api_cita:
     type: rest
     resource: AppBundle\Controller\CitaController
+
+
+# Rutas combinadas #
+
+api_usuario_cliente:
+    type:     rest
+    parent:   api_usuario
+    resource: AppBundle\Controller\UsuarioClienteController
