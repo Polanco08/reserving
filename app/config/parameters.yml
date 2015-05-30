@@ -6,6 +6,7 @@ parameters:
     database_name: reserving
     database_user: ReservingUser
     database_password: ReservingPass
+
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null

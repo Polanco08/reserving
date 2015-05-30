@@ -143,6 +143,9 @@ h5 {
   margin-top: 5px;
   font-weight: 600;
 }
+.xt-error {
+  border-color: #e74c3c;
+}
 /** LAYOUT ESYLE
 ----------------------------------------------------------*/
 .main-page {

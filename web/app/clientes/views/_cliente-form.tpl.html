@@ -1,9 +1,13 @@
-<form>
+<form  role="form" name="AddformClientes" novalidate
+       id="formCliente"
+       xt-form="formCliente" xt-form strategy="focusedAndDirtyOrSubmitted"
+       focus-error="true">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" ng-class="">
             <div class="form-group">
                 <input ng-model="cliente.nombre"
-                       type="text" class="form-control mb-md" id="nombre" placeholder="Nombre">
+                       type="text" class="form-control mb-md" id="nombre" placeholder="Nombre"
+                       xt-validate required msg-required="Debe asignar un nombre al cliente" name="nombre">
             </div>
             <div class="form-group">
                 <input ng-model="cliente.apellidos"
@@ -22,11 +26,13 @@
             <div class="form-group">
                 <div class="form-group">
                     <input ng-model="cliente.email"
-                           type="email" class="form-control mb-md" id="email" placeholder="Correo electrónico">
+                           type="email" class="form-control mb-md" id="email" placeholder="Correo electrónico"
+                           xt-validate required msg-required="El campo email es obligatorio" name="email">
                 </div>
                 <div class="form-group">
                     <input ng-model="cliente.tel"
-                           type="tel" class="form-control mb-md" id="telefono" placeholder="Teléfono de contacto">
+                           type="tel" class="form-control mb-md" id="telefono" placeholder="Teléfono de contacto"
+                           xt-validate required msg-required="Debes asignar un teléfono de contacto" name="telefono">
                 </div>
                 <div class="form-group">
                     <input ng-model="cliente.cPostal"

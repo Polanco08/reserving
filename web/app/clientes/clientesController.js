@@ -13,6 +13,16 @@ angular.module('Clientes')
                 });
             }
 
+            $scope.formCliente = {
+                onSubmit: function(isValid){
+                    if(isValid){
+                        console.log("válido");
+                    } else {
+                        console.log("inválido");
+                    }
+                }
+            }
+
             $scope.nuevo = function(){
                 $rootScope.titulo = "Nuevo cliente";
                 $rootScope.descripcion  = 'Completa el formulario.';
@@ -74,6 +84,7 @@ angular.module('Clientes')
         $rootScope.titulo       = 'Gestión de clientes';
         $rootScope.descripcion  = 'Administra tus clientes.';
         $scope.orden            = 'nombre';
+        $scope.reverse          = false;
         $scope.orderList = function(order){
             $scope.orden = order;
         }
