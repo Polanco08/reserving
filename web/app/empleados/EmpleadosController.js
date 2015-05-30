@@ -4,14 +4,7 @@ angular.module('Empleados',[])
 
     .controller('EmpleadosController', ['$scope', '$rootScope','$state', 'EmpleadoResource',
         function($scope, $rootScope, $state, EmpleadoResource){
-        $scope.example9model = [];
-        $scope.example9data = [
-            {id: 1, label: "David"},
-            {id: 2, label: "Jhon"},
-            {id: 3, label: "Danny"}
-        ];
-        $scope.example9settings = {enableSearch: true};
-
+        $scope.alerta_citas = 1;
 
         function init(){
             $scope.empleado = new EmpleadoResource();
@@ -25,23 +18,30 @@ angular.module('Empleados',[])
             $rootScope.titulo = "Nuevo empleado";
             $rootScope.descripcion  = 'Completa el formulario.';
         }
+
         $scope.editar = function(empleado){
             $rootScope.titulo       = "Editar empleado";
             $rootScope.descripcion = "Editar datos de: "+ empleado.nombre;
             $scope.empleado = empleado;
-        }
-        $scope.save = function(empleado){
-            if(empleado.id){
-                EmpleadoResource.update($scope.empleado);
-            } else {
-                $scope.empleado.$save(function(){
-                    $scope.empleados.push($scope.empleado);
-                });
-            }
-            $state.go('empleados.list');
+
         }
 
-            $scope.delete = function(empleado){
+        $scope.empleadoForm = {
+            onSubmit: function(isValid){
+                if(isValid){
+                    if($scope.empleado.id){
+                        EmpleadoResource.update($scope.empleado);
+                    } else {
+                        $scope.empleado.$save(function(){
+                            $scope.empleados.push($scope.empleado);
+                        });
+                    }
+                    $state.go('empleados.list');
+                }
+            }
+        }
+
+        $scope.delete = function(empleado){
                 swal({
                     title: "¿Seguro?",
                     text: "Vas a eliminar el servicio id: "+empleado.id+", se perderán sus datos.",

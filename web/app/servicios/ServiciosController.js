@@ -5,6 +5,7 @@ angular.module('Servicios')
     function($scope, $rootScope, $stateParams,$state, serviciosResource, EmpleadoResource){
         $scope.habilitado_para_reserva = false;
         $scope.duracion =['10','15','30','45','60','75','90'];
+        $scope.servicio = new serviciosResource();
 
         function init(){
             $scope.empleados = EmpleadoResource.query();
@@ -18,18 +19,20 @@ angular.module('Servicios')
             $rootScope.titulo = "Nuevo servicio";
             $rootScope.descripcion  = 'Completa el formulario.';
         };
-
-        $scope.save = function(servicio){
-            if(servicio.id){
-                serviciosResource.update($scope.servicio);
-            } else {
-                $scope.servicio.$save(function(){
-                    $scope.servicios.push($scope.servicio);
-                });
+        $scope.servicioForm = {
+            onSubmit: function(isValid){
+                if(isValid){
+                    if(servicio.id){
+                        serviciosResource.update($scope.servicio);
+                    } else {
+                        $scope.servicio.$save(function(){
+                            $scope.servicios.push($scope.servicio);
+                        });
+                    }
+                    $state.go('servicios.list');
+                }
             }
-            $state.go('servicios.list');
         }
-
         $scope.editar = function(servicio){
             $rootScope.titulo       = 'Editar servicio';
             $rootScope.descripcion  = 'Cambia los datos y guardalos.';

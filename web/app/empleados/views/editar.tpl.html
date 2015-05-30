@@ -7,7 +7,8 @@
         <div ng-include src="'empleados/views/_empleado-form.tpl.html'"></div>
     </div>
     <div class="panel-footer">
-        <a ng-click="save(empleado);" class="btn btn-success"><i class="fa fa-save"></i> Guardar</a>
+        <button type="submit" form="empleadoForm" class="btn btn-success"><i class="fa fa-save"></i> Guardar</button>
         <a ui-sref="empleados.list" class="btn btn-default"><i class="fa fa-ban"></i> Cancelar</a>
+        <a ng-click="delete(empleado)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Eliminar</a>
     </div>
 </div>

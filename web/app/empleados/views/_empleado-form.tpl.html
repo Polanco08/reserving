@@ -1,5 +1,5 @@
 <form id="empleadoForm"
-      xt-form="xt_formEmpleado"  strategy="focusedAndDirtyOrSubmitted" focus-error="true" novalidate>
+      xt-form="empleadoForm"  strategy="focusedAndDirtyOrSubmitted" focus-error="true" novalidate>
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
@@ -13,14 +13,15 @@
             </div>
             <div class="form-group">
                 <label for="telefono">Teléfono de contacto</label>
-                <input ng-model="empleado.telefono" type="text" class="form-control mb-md" id="telefono" placeholder="Telefono de contacto"
-                       xt-validate required msg-required="Debe asignar un telefono de contacto" name="telefono">
+                <input ng-model="empleado.telefono" type="text" class="form-control mb-md" id="telefono"
+                       placeholder="Telefono de contacto" xt-validate required
+                       msg-required="Debe asignar un telefono de contacto" name="telefono">
             </div>
             <div class="form-group">
-                <label for="alerta_citas">
-                    <input type="checkbox" name="vehicle" ng-model="empleado.alerta_citas" id="alerta_citas" checked>
-                    Notificar las nuevas citas vía correo electrónico
-                </label>
+                <p>Notificar las nuevas citas vía correo electrónico</p>
+                <label for="si">Sí <input id="si" type="radio" ng-init="empleado.alerta_citas=false"
+                                          ng-model="empleado.alerta_citas" value="1" /></label>
+                <label for="no">No <input type="radio" ng-model="empleado.alerta_citas" value="0" id="no"/></label>
             </div>
         </div>
         <div class="col-sm-6">

@@ -8,7 +8,6 @@
             'ncy-angular-breadcrumb',
             'angular-loading-bar',
             'xtForm',
-            'angular-dropdown-multiselect',
 
             'Citas',
             'Empleados',
