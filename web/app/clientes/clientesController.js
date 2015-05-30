@@ -7,6 +7,7 @@ angular.module('Clientes')
         function($scope, $stateParams, $rootScope, $state, ClienteResource){
 
             function init(){
+                $scope.errorMsg = false;
                 $scope.cliente          = new ClienteResource();
                 $scope.clientes         = ClienteResource.query().$promise.then(function(data){
                     $scope.clientes     = data;
@@ -16,9 +17,19 @@ angular.module('Clientes')
             $scope.formCliente = {
                 onSubmit: function(isValid){
                     if(isValid){
-                        console.log("válido");
+
+                        //Guardar formulario
+                        if($scope.cliente.id){
+                            //actualiza
+                            ClienteResource.update($scope.cliente);
+                        } else {
+                            // guarda nuevo
+                            $scope.cliente.$save();
+                            $scope.clientes.push($scope.cliente);
+                        }
+                        $state.go('clientes.list');
                     } else {
-                        console.log("inválido");
+
                     }
                 }
             }
@@ -27,18 +38,6 @@ angular.module('Clientes')
                 $rootScope.titulo = "Nuevo cliente";
                 $rootScope.descripcion  = 'Completa el formulario.';
                 $scope.cliente = new ClienteResource();
-            };
-
-            $scope.save = function() {
-                if($scope.cliente.id){
-                    //actualiza
-                    ClienteResource.update($scope.cliente);
-                } else {
-                    // guarda nuevo
-                    $scope.cliente.$save();
-                    $scope.clientes.push($scope.cliente);
-                }
-                $state.go('clientes.list');
             };
 
             $scope.delete = function(cliente){
